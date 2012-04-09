@@ -1,0 +1,24 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSCI3097_HW3", "CSCI3097_HW3\CSCI3097_HW3\CSCI3097_HW3.csproj", "{22458D54-9E1F-468A-A313-BE5778A03D3B}"
+EndProject
+Project("{96E2B04D-8817-42C6-938A-82C39BA4D311}") = "CSCI3097_HW3Content", "CSCI3097_HW3\CSCI3097_HW3Content\CSCI3097_HW3Content.contentproj", "{413A79DF-40E3-4F45-904A-F8C5988FD59E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{22458D54-9E1F-468A-A313-BE5778A03D3B}.Debug|x86.ActiveCfg = Debug|x86
+		{22458D54-9E1F-468A-A313-BE5778A03D3B}.Debug|x86.Build.0 = Debug|x86
+		{22458D54-9E1F-468A-A313-BE5778A03D3B}.Release|x86.ActiveCfg = Release|x86
+		{22458D54-9E1F-468A-A313-BE5778A03D3B}.Release|x86.Build.0 = Release|x86
+		{413A79DF-40E3-4F45-904A-F8C5988FD59E}.Debug|x86.ActiveCfg = Debug|x86
+		{413A79DF-40E3-4F45-904A-F8C5988FD59E}.Release|x86.ActiveCfg = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
