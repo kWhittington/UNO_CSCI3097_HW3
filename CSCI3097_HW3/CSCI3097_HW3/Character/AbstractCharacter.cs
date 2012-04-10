@@ -19,6 +19,7 @@ namespace CSCI3097_HW3.Character
     protected float walk_velocity;
     protected float run_velocity;
     protected float jump_velocity;
+    protected bool is_alive;
     protected bool is_jumping;
     protected bool is_running;
     protected Vector2 position;
@@ -47,6 +48,18 @@ namespace CSCI3097_HW3.Character
     public Vector2 currentSpeed()
     {
       return this.current_velocity;
+    }
+
+    /// <summary>
+    /// Will return whether or not the character is alive.
+    /// ENSURE:   if the character is alive,
+    ///            return true
+    ///           otherwise,
+    ///            return false
+    /// </summary>
+    bool isAlive()
+    {
+      return this.is_alive;
     }
 
     /// <summary>

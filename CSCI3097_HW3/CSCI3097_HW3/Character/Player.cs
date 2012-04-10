@@ -33,6 +33,8 @@ namespace CSCI3097_HW3.Character
       this.run_velocity = run_speed;
       this.jump_velocity = jump_speed;
       this.current_velocity = new Vector2(walk_speed, 0);
+      //start the player off as alive
+      this.is_alive = true;
     }
   }
 }

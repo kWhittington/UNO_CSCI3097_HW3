@@ -28,6 +28,15 @@ namespace CSCI3097_HW3.Character
     Rectangle BoundingBox();
 
     /// <summary>
+    /// Will return whether or not the character is alive.
+    /// ENSURE:   if the character is alive,
+    ///            return true
+    ///           otherwise,
+    ///            return false
+    /// </summary>
+    bool isAlive();
+
+    /// <summary>
     /// Will return whether or not the character is currently walking.
     /// ENSURE:   if the character is walking,
     ///            return true
