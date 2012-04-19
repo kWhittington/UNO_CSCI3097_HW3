@@ -19,10 +19,13 @@ namespace CSCI3097_HW3.Character
     protected float walk_velocity;
     protected float run_velocity;
     protected float jump_velocity;
+    protected float fall_velocity;
     protected bool is_alive;
-    protected bool is_jumping;
     protected bool is_running;
+    protected bool is_jumping;
+    protected bool is_falling;
     protected Vector2 position;
+    protected Vector2 jumping_point;
 
     /////////////////////////////////////////////////////////////////
     #region QUERIES
@@ -51,13 +54,37 @@ namespace CSCI3097_HW3.Character
     }
 
     /// <summary>
+    /// Will return the current position of this character
+    /// in the form of a Vector2 object. The Vector2 represents
+    /// ENSURE:   a Vector2 of this character's
+    ///            current position is returned.
+    /// </summary>
+    public Vector2 currentPosition()
+    {
+      return this.position;
+    }
+
+    /// <summary>
+    /// Will return the position from where this character jumped from.
+    /// If the character is not in the process of jumping,
+    /// the returned Vector2 object state should not be trusted.
+    /// REQUIRE:  this character is currently jumping
+    /// ENSURE:   a Vector2 of this character's starting point
+    ///            of the jump is returned
+    /// </summary>
+    public Vector2 jumpingPoint()
+    {
+      return this.jumping_point;
+    }
+
+    /// <summary>
     /// Will return whether or not the character is alive.
     /// ENSURE:   if the character is alive,
     ///            return true
     ///           otherwise,
     ///            return false
     /// </summary>
-    bool isAlive()
+    public bool isAlive()
     {
       return this.is_alive;
     }
@@ -101,11 +128,45 @@ namespace CSCI3097_HW3.Character
       return this.is_jumping;
     }
 
+    /// <summary>
+    /// Will return whether or not this character is grounded
+    /// on a surface and not falling or jumping currently.
+    /// ENSURE:   if the character has a vertical velocity,
+    ///            return true
+    ///           otherwise
+    ///            return false
+    /// </summary>
+    public bool isGrounded()
+    {
+      //assume the character is grounded
+      bool result = true;
+
+      //if the character is jumping or falling
+      if (this.is_jumping == true || this.is_falling)
+      {
+        //it can't be grounded
+        result = false;
+      }
+
+      return result;
+    }
+
     #endregion QUERIES
     /////////////////////////////////////////////////////////////////
 
     /////////////////////////////////////////////////////////////////
     #region COMMANDS
+
+    /// <summary>
+    /// Will kill the character, what else is there to say really?
+    /// REQUIRE:  you don't want to use the character anymore
+    ///            &&/|| it really deserves to be dead
+    /// ENSURE:   this.isAlive() == false
+    /// </summary>
+    public void kill()
+    {
+      this.is_alive = false;
+    }
 
     /// <summary>
     /// Will move this character to the left of their current position.
@@ -117,7 +178,7 @@ namespace CSCI3097_HW3.Character
     ///            new.position.X is greater or equal to
     ///            old.position.X-horizontal velocity
     /// </summary>
-    public void moveLeft()
+    public void setLeftMove()
     {
       this.position.X = this.position.X - this.current_velocity.X;
     }
@@ -132,24 +193,48 @@ namespace CSCI3097_HW3.Character
     ///            new.position.X is less or equal to
     ///            old.position.X-horiztonal velocity
     /// </summary>
-    public void moveRight()
+    public void setRightMove()
     {
       this.position.X = this.position.X + this.current_velocity.X;
     }
 
     /// <summary>
-    /// Will make this character jump, giving it a brief veritcal velocity.
-    /// While jumping, a character cannot jump again.
-    /// REQUIRE:  this character must not already be jumping
-    /// ENSURE:   this character will be givin a vertical velocity to
-    ///            simulate jumping into the air.
+    /// Will move this character's position based on the current
+    /// velocity.  If the character has a negative horizontal velocity,
+    /// the character will move to the left.  If it is positive, the
+    /// character will move to the right.  If the character has a
+    /// negative vertical velocity, the characte will move up.  If
+    /// it is positive, the character will move down.
+    /// ENSURE:   if current velocity.X is negative
+    ///            character moves left
+    ///           or if current velocity.X is positive
+    ///            character moves right
+    ///           if current velocity.Y is negative
+    ///            character moves up
+    ///           or if current velocity.Y is positive
+    ///            character moves down
     /// </summary>
-    public void jump()
+    public void moveCharacter()
     {
-      //turn the flag on
-      this.is_jumping = true;
-      //apply a negative force to Y (up is negative, down positive)
-      this.current_velocity.Y = (0 - this.jump_velocity);
+      //apply any stored horizontal forces to the character
+      this.position.X = this.position.X + this.current_velocity.X;
+      //apply any stored vertical forces to the character
+      this.position.Y = this.position.Y + this.current_velocity.Y;
+    }
+
+    /// <summary>
+    /// Will make this character walk, setting its current velocity to
+    /// whatever its walking velocity is.  While walking, a character
+    /// can run again, as it will not change anything.
+    /// The speed will remain constant.
+    /// ENSURE:   this character's velocity will be set to it walking velocity
+    /// </summary>
+    public void walk()
+    {
+      //turn the flag off
+      this.is_running = false;
+      //set the current horizontal velocity to the walking velocity
+      this.current_velocity.X = this.walk_velocity;
     }
 
     /// <summary>
@@ -168,18 +253,64 @@ namespace CSCI3097_HW3.Character
     }
 
     /// <summary>
-    /// Will make this character walk, setting its current velocity to
-    /// whatever its walking velocity is.  While walking, a character
-    /// can run again, as it will not change anything.
-    /// The speed will remain constant.
-    /// ENSURE:   this character's velocity will be set to it walking velocity
+    /// Will make this character jump, giving it a brief veritcal velocity.
+    /// While jumping, a character cannot jump again.
+    /// REQUIRE:  this character must not already be jumping
+    /// ENSURE:   this character will be givin a vertical velocity to
+    ///            simulate jumping into the air.
     /// </summary>
-    public void walk()
+    public void jump()
     {
-      //turn the flag off
-      this.is_running = false;
-      //set the current horizontal velocity to the walking velocity
-      this.current_velocity.X = this.walk_velocity;
+      //make sure the fall flag is off
+      this.is_falling = false;
+      //turn the flag on
+      this.is_jumping = true;
+      //save the current jumping point
+      this.jumping_point = this.position;
+      //apply a negative force to Y (up is negative, down positive)
+      this.current_velocity.Y = (0 - this.jump_velocity);
+    }
+
+    /// <summary>
+    /// Will make this character fall, giving it a positive velocity.
+    /// While falling, a character cannot jump if they have already.
+    /// REQUIRE:  the character is allowed to pass through the space
+    ///            their current position.Y - their fall speed
+    /// ENSURE:   this character will be given a positive velocity to
+    ///            simulate falling from the air.
+    /// </summary>
+    public void fall()
+    {
+      //make sure the jump flag is off
+      this.is_jumping = false;
+      //turn the fall flag on
+      this.is_falling = true;
+      //apply a positive force to Y (up is negative, down positive)
+      this.current_velocity.Y = (0 + this.fall_velocity);
+    }
+
+    /// <summary>
+    /// Will set this character's vertical velocity to 0,
+    /// neutralizing any vertical forces this character might experience.
+    /// ENSURE:   this character will neighter fall nor jump next move
+    /// </summary>
+    public void ground()
+    {
+      //turn the fall flag off
+      this.is_falling = false;
+      //turn the jump flag off
+      this.is_jumping = false;
+      //reset the vertical velocity, set it to 0,
+      //neutralizing all vertical forces
+      this.current_velocity.Y = 0;
+    }
+
+    /// <summary>
+    /// Will make this character cease vertical and horizontal movement.
+    /// ENSURE:   this character's horizontal and vertical velocity will be 0
+    /// </summary>
+    public void resetVelocity()
+    {
     }
 
     #endregion COMMANDS
