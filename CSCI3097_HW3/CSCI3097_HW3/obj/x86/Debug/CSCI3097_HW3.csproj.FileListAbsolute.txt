@@ -4,3 +4,8 @@ C:\Users\kwhittin\Documents\Visual Studio 2010\Projects\CSCI3097_HW3\CSCI3097_HW
 C:\Users\kwhittin\Documents\Visual Studio 2010\Projects\CSCI3097_HW3\CSCI3097_HW3\CSCI3097_HW3\bin\x86\Debug\CSCI3097_HW3.pdb
 C:\Users\kwhittin\Documents\Visual Studio 2010\Projects\CSCI3097_HW3\CSCI3097_HW3\CSCI3097_HW3\obj\x86\Debug\CSCI3097_HW3.exe
 C:\Users\kwhittin\Documents\Visual Studio 2010\Projects\CSCI3097_HW3\CSCI3097_HW3\CSCI3097_HW3\obj\x86\Debug\CSCI3097_HW3.pdb
+C:\Users\kwhittin\Documents\Visual Studio 2010\Projects\CSCI3097_HW3\CSCI3097_HW3\CSCI3097_HW3\bin\x86\Debug\Content\starman.xnb
+C:\Users\kwhittin\Documents\Visual Studio 2010\Projects\CSCI3097_HW3\CSCI3097_HW3\CSCI3097_HW3\bin\x86\Debug\Content\tileset-platformer.xnb
+C:\Users\kwhittin\Documents\Visual Studio 2010\Projects\CSCI3097_HW3\CSCI3097_HW3\CSCI3097_HW3\bin\x86\Debug\Content\level_one.txt
+C:\Users\kwhittin\Documents\Visual Studio 2010\Projects\CSCI3097_HW3\CSCI3097_HW3\CSCI3097_HW3\bin\x86\Debug\Content\starman.png
+C:\Users\kwhittin\Documents\Visual Studio 2010\Projects\CSCI3097_HW3\CSCI3097_HW3\CSCI3097_HW3\bin\x86\Debug\Content\tileset-platformer.png

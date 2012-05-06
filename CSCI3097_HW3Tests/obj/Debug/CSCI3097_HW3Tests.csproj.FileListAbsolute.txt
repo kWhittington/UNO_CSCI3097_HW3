@@ -1,0 +1,12 @@
+C:\Users\kwhittin\Documents\Visual Studio 2010\Projects\CSCI3097_HW3\CSCI3097_HW3Tests\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\kwhittin\Documents\Visual Studio 2010\Projects\CSCI3097_HW3\CSCI3097_HW3Tests\bin\Debug\Content\starman.xnb
+C:\Users\kwhittin\Documents\Visual Studio 2010\Projects\CSCI3097_HW3\CSCI3097_HW3Tests\bin\Debug\Content\tileset-platformer.xnb
+C:\Users\kwhittin\Documents\Visual Studio 2010\Projects\CSCI3097_HW3\CSCI3097_HW3Tests\bin\Debug\CSCI3097_HW3Tests.dll
+C:\Users\kwhittin\Documents\Visual Studio 2010\Projects\CSCI3097_HW3\CSCI3097_HW3Tests\bin\Debug\CSCI3097_HW3Tests.pdb
+C:\Users\kwhittin\Documents\Visual Studio 2010\Projects\CSCI3097_HW3\CSCI3097_HW3Tests\bin\Debug\CSCI3097_HW3.exe
+C:\Users\kwhittin\Documents\Visual Studio 2010\Projects\CSCI3097_HW3\CSCI3097_HW3Tests\bin\Debug\CSCI3097_HW3.pdb
+C:\Users\kwhittin\Documents\Visual Studio 2010\Projects\CSCI3097_HW3\CSCI3097_HW3Tests\obj\Debug\CSCI3097_HW3Tests.dll
+C:\Users\kwhittin\Documents\Visual Studio 2010\Projects\CSCI3097_HW3\CSCI3097_HW3Tests\obj\Debug\CSCI3097_HW3Tests.pdb
+C:\Users\kwhittin\Documents\Visual Studio 2010\Projects\CSCI3097_HW3\CSCI3097_HW3Tests\bin\Debug\Content\level_one.txt
+C:\Users\kwhittin\Documents\Visual Studio 2010\Projects\CSCI3097_HW3\CSCI3097_HW3Tests\bin\Debug\Content\starman.png
+C:\Users\kwhittin\Documents\Visual Studio 2010\Projects\CSCI3097_HW3\CSCI3097_HW3Tests\bin\Debug\Content\tileset-platformer.png

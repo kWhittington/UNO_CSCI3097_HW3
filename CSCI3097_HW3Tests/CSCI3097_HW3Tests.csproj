@@ -6,7 +6,7 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{669A3E7B-1B35-419A-99B1-405E708A7F81}</ProjectGuid>
+    <ProjectGuid>{58B6F112-5E0F-421C-896F-1CFA03F49AE9}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>CSCI3097_HW3Tests</RootNamespace>
@@ -52,14 +52,12 @@
     </CodeAnalysisDependentAssemblyPaths>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EnemyTest.cs" />
+    <Compile Include="Level_TileTest.cs" />
     <Compile Include="PlayerTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CSCI3097_HW3\CSCI3097_HW3Content\CSCI3097_HW3Content.contentproj">
-      <Project>{413A79DF-40E3-4F45-904A-F8C5988FD59E}</Project>
-      <Name>CSCI3097_HW3Content %28Content%29</Name>
-    </ProjectReference>
     <ProjectReference Include="..\CSCI3097_HW3\CSCI3097_HW3\CSCI3097_HW3.csproj">
       <Project>{22458D54-9E1F-468A-A313-BE5778A03D3B}</Project>
       <Name>CSCI3097_HW3</Name>

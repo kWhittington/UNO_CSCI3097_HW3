@@ -20,11 +20,13 @@ namespace CSCI3097_HW3.Level
   {
     //STATIC VARIABLES
     private readonly int TILE_SIZE = 32;
-    private enum TileCollision { SOLID_COLLISION, PLATFORM_COLLISION, NO_COLLISION };
+    internal enum TileCollision { SOLID_COLLISION, PLATFORM_COLLISION, NO_COLLISION };
     //INSTANCE VARIABLES
     private Managers.CharacterManager character_manager;
     private Tile[,] level_tiles;
     private Texture2D tile_sheet;
+    private Stream level_sheet_stream;
+    private String tile_sheet_name;
     private int tile_sheet_width_in_tiles;
     private int tile_sheet_height_in_tiles;
 
@@ -34,13 +36,8 @@ namespace CSCI3097_HW3.Level
     {
       //give the character manager a player skin and location
       this.character_manager = new Managers.CharacterManager(game, player_texture, player_position);
-      this.tile_sheet = game.Content.Load<Texture2D>(tile_sheet);
-      //compute how many tiles wide the sprite sheet is
-      this.tile_sheet_width_in_tiles = this.tile_sheet.Width / this.TILE_SIZE;
-      //compute how many tiles high the sprite sheet is
-      this.tile_sheet_height_in_tiles = this.tile_sheet.Height / this.TILE_SIZE;
-      //load the level
-      this.loadLevel(level_sheet);
+      this.tile_sheet_name = tile_sheet;
+      this.level_sheet_stream = level_sheet;
     }
 
     /// <summary>
@@ -59,22 +56,24 @@ namespace CSCI3097_HW3.Level
       List<List<int>> tile_values = new List<List<int>>();
       using (StreamReader reader = new StreamReader(level_sheet))
       {
+        
         //read the first line of the file
         string line = reader.ReadLine();
         //set the row width value to whatever the first line's length was
-        width = line.Length;
+        width = parseStringToIntArray(line).Capacity;
         //while there are still lines left
         while (line != null)
         {
-          tile_values.Add(parseStringToIntArray(line));
-          if (line.Length != width)
+          List<int> line_values = parseStringToIntArray(line);
+          tile_values.Add(line_values);
+          if (line_values.Capacity != width)
             throw new Exception(String.Format("The length of line {0} is different from all preceeding lines.", tile_values.Count));
           line = reader.ReadLine();
         }
       }
 
       // Allocate the tile grid.
-      this.level_tiles = new Tile[width, tile_values.Count];
+      this.level_tiles = new Tile[tile_values[0].Count, tile_values.Count];
 
       // Loop over every tile position,
       for (int y = 0; y < this.level_tiles.GetLength(1); ++y)
@@ -83,7 +82,17 @@ namespace CSCI3097_HW3.Level
         {
           // to load each tile.
           int tile_value = tile_values[y][x];
-          this.level_tiles[x, y] = LoadTile(tile_value, x, y);
+          // if there is a negative value
+          if (tile_value < 0)
+          {
+            //load a blank tile
+            this.level_tiles[x, y] = this.LoadBlankTile(x, y);
+          }
+          //otherwise, the tile texture exists on the tile sheet
+          else
+          {
+            this.level_tiles[x, y] = LoadTile(tile_value, x, y);
+          }
         }
       }
     }
@@ -122,6 +131,22 @@ namespace CSCI3097_HW3.Level
       }
       
       return result;
+    }
+
+    /// <summary>
+    /// Will create and return a new instance of a 
+    /// passable tile with a blank texture.
+    /// ENSURE:   returns a new tile with a blank texture,
+    ///            && new.tile.collisionType() == TileCollision.NO_COLLISION
+    /// </summary>
+    private Tile LoadBlankTile(int x, int y)
+    {
+      //make a new tile with texture source of 116, which is blank
+      Tile blank_tile = this.LoadTile(116, x, y);
+      //now remove collision from the tile
+      blank_tile.makePassable();
+
+      return blank_tile;
     }
 
     /// <summary>
@@ -180,8 +205,24 @@ namespace CSCI3097_HW3.Level
     /// </summary>
     public override void Initialize()
     {
+      this.tile_sheet = Game.Content.Load<Texture2D>(tile_sheet_name);
+      //compute how many tiles wide the sprite sheet is
+      this.tile_sheet_width_in_tiles = this.tile_sheet.Width / this.TILE_SIZE;
+      //compute how many tiles high the sprite sheet is
+      this.tile_sheet_height_in_tiles = this.tile_sheet.Height / this.TILE_SIZE;
 
+      //add the manager
+      Game.Components.Add(this.character_manager);
       base.Initialize();
+    }
+
+    protected override void LoadContent()
+    {
+      
+      //load the level
+      this.loadLevel(level_sheet_stream);
+
+      base.LoadContent();
     }
 
     /// <summary>
@@ -199,6 +240,27 @@ namespace CSCI3097_HW3.Level
     /// </summary>
     public override void Draw(GameTime gameTime)
     {
+      //draw the player character
+      SpriteBatch spriteBatch = Game.Services.GetService(
+        typeof(SpriteBatch)) as SpriteBatch;
+
+      spriteBatch.Begin();
+      //below draws the player character with no scaling
+      //spriteBatch.Draw(this.character_manager.playerCharacter().Texture(),
+        //this.character_manager.playerCharacter().currentPosition(), Color.White);
+
+      //below draws the player character with 1/2 scaling
+      spriteBatch.Draw(this.character_manager.playerCharacter().Texture(),
+        this.character_manager.playerCharacter().currentPosition(), null,
+        Color.White, 0f, new Vector2(0, 0), .5f, SpriteEffects.None, 0);
+      
+      //loop through and draw the level tiles
+      foreach (Tile tile in this.level_tiles)
+      {
+        spriteBatch.Draw(this.tile_sheet, tile.destinationRectangle, tile.textureSource, Color.White);
+      }
+
+      spriteBatch.End();
 
       base.Draw(gameTime);
     }
@@ -303,6 +365,15 @@ namespace CSCI3097_HW3.Level
       internal int height
       {
         get { return this.dimensions.Height; }
+      }
+
+      ///<summary>
+      /// Will return this tile's destination rectangle.
+      /// ENSURE:   returns this.dimensions
+      ///</summary>
+      internal Rectangle destinationRectangle
+      {
+        get { return this.dimensions; }
       }
 
       /// <summary>

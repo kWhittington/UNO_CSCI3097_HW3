@@ -31,6 +31,14 @@ namespace CSCI3097_HW3.Character
     #region QUERIES
 
     /// <summary>
+    /// Will return the texture of this character.
+    /// </summary>
+    public Texture2D Texture()
+    {
+      return this.texture;
+    }
+
+    /// <summary>
     /// Will return the hit box for this character,
     /// designating the rectangular coordinates a "hit" 
     /// has to occur in order to register on this character.

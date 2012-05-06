@@ -12,17 +12,21 @@ using Microsoft.Xna.Framework.Media;
 namespace CSCI3097_HW3
 {
   /// <summary>
-  /// This is the main type for your game
+  /// This will model the game's rules and physics system,
+  /// tying together all components of the game and
+  /// processing input and output.
   /// </summary>
   public class Game : Microsoft.Xna.Framework.Game
   {
     GraphicsDeviceManager graphics;
     SpriteBatch spriteBatch;
+    private Managers.LevelManager level_manager;
 
     public Game()
     {
       graphics = new GraphicsDeviceManager(this);
       Content.RootDirectory = "Content";
+      
     }
 
     /// <summary>
@@ -34,7 +38,8 @@ namespace CSCI3097_HW3
     protected override void Initialize()
     {
       // TODO: Add your initialization logic here
-
+      level_manager = new Managers.LevelManager(this, "starman", new Vector2(50, 50), "tileset-platformer", "level_one.txt");
+      Components.Add(level_manager);
       base.Initialize();
     }
 
@@ -46,8 +51,10 @@ namespace CSCI3097_HW3
     {
       // Create a new SpriteBatch, which can be used to draw textures.
       spriteBatch = new SpriteBatch(GraphicsDevice);
-
+      Services.AddService(typeof(SpriteBatch), spriteBatch);
       // TODO: use this.Content to load your game content here
+      
+      base.LoadContent();
     }
 
     /// <summary>

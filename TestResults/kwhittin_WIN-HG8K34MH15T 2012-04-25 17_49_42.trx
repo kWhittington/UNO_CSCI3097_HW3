@@ -1,0 +1,196 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="619a6425-da5f-42d5-b7c5-50865d9bf80c" name="kwhittin@WIN-HG8K34MH15T 2012-04-25 17:49:42" runUser="WIN-HG8K34MH15T\kwhittin" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestSettings name="Local" id="399ab7c9-c824-4a2e-88a0-ddb9bd02cffb">
+    <Description>These are default test settings for a local test run.</Description>
+    <Deployment enabled="false" runDeploymentRoot="kwhittin_WIN-HG8K34MH15T 2012-04-25 17_49_42">
+      <DeploymentItem filename="C:\Users\kwhittin\Documents\Visual Studio 2010\Projects\CSCI3097_HW3\CSCI3097_HW3\CSCI3097_HW3\bin\x86\Debug\CSCI3097_HW3.exe" />
+    </Deployment>
+    <Execution>
+      <TestTypeSpecific />
+      <AgentRule name="Execution Agents">
+      </AgentRule>
+    </Execution>
+  </TestSettings>
+  <Times creation="2012-04-25T17:49:42.8901827-05:00" queuing="2012-04-25T17:50:01.6723324-05:00" start="2012-04-25T17:50:05.8844674-05:00" finish="2012-04-25T17:50:18.4740709-05:00" />
+  <ResultSummary outcome="Inconclusive">
+    <Counters total="12" executed="12" error="0" failed="0" timeout="0" aborted="0" inconclusive="12" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" passed="0" completed="0" inProgress="0" pending="0" />
+  </ResultSummary>
+  <TestDefinitions>
+    <UnitTest name="widthTest" storage="c:\users\kwhittin\documents\visual studio 2010\projects\csci3097_hw3\csci3097_hw3tests\bin\debug\csci3097_hw3tests.dll" id="21bfd64d-cc3c-6e6b-bff1-7309d0309918">
+      <Execution id="365c8bf9-4598-45f9-81db-8b446dd68805" />
+      <TestMethod codeBase="C:/Users/kwhittin/Documents/Visual Studio 2010/Projects/CSCI3097_HW3/CSCI3097_HW3Tests/bin/Debug/CSCI3097_HW3Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="CSCI3097_HW3Tests.Level_TileTest, CSCI3097_HW3Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="widthTest" />
+    </UnitTest>
+    <UnitTest name="EnemyConstructorTest" storage="c:\users\kwhittin\documents\visual studio 2010\projects\csci3097_hw3\csci3097_hw3tests\bin\debug\csci3097_hw3tests.dll" id="9063b9f1-aff6-2220-7061-bc20a9791994">
+      <Execution id="6951e7df-cb81-4cae-8310-167fbd8c1a70" />
+      <TestMethod codeBase="C:/Users/kwhittin/Documents/Visual Studio 2010/Projects/CSCI3097_HW3/CSCI3097_HW3Tests/bin/Debug/CSCI3097_HW3Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="CSCI3097_HW3Tests.EnemyTest, CSCI3097_HW3Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="EnemyConstructorTest" />
+    </UnitTest>
+    <UnitTest name="makeSolidTest" storage="c:\users\kwhittin\documents\visual studio 2010\projects\csci3097_hw3\csci3097_hw3tests\bin\debug\csci3097_hw3tests.dll" id="55de63b1-75b7-1128-c305-16d1a2a2bdc6">
+      <Execution id="908c5c10-b0fa-4cc9-8fe2-a67d6f2fe294" />
+      <TestMethod codeBase="C:/Users/kwhittin/Documents/Visual Studio 2010/Projects/CSCI3097_HW3/CSCI3097_HW3Tests/bin/Debug/CSCI3097_HW3Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="CSCI3097_HW3Tests.Level_TileTest, CSCI3097_HW3Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="makeSolidTest" />
+    </UnitTest>
+    <UnitTest name="collisionTypeTest" storage="c:\users\kwhittin\documents\visual studio 2010\projects\csci3097_hw3\csci3097_hw3tests\bin\debug\csci3097_hw3tests.dll" id="ced27c20-03d9-48a2-8e07-d3573d810c55">
+      <Execution id="79ba545a-e7cc-4692-ac19-570bac7c151e" />
+      <TestMethod codeBase="C:/Users/kwhittin/Documents/Visual Studio 2010/Projects/CSCI3097_HW3/CSCI3097_HW3Tests/bin/Debug/CSCI3097_HW3Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="CSCI3097_HW3Tests.Level_TileTest, CSCI3097_HW3Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="collisionTypeTest" />
+    </UnitTest>
+    <UnitTest name="makePlatformTest" storage="c:\users\kwhittin\documents\visual studio 2010\projects\csci3097_hw3\csci3097_hw3tests\bin\debug\csci3097_hw3tests.dll" id="c2c9deb0-f466-5f82-446e-1006f227712a">
+      <Execution id="6a28c238-6a2f-4351-a41f-1b5b5d51c731" />
+      <TestMethod codeBase="C:/Users/kwhittin/Documents/Visual Studio 2010/Projects/CSCI3097_HW3/CSCI3097_HW3Tests/bin/Debug/CSCI3097_HW3Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="CSCI3097_HW3Tests.Level_TileTest, CSCI3097_HW3Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="makePlatformTest" />
+    </UnitTest>
+    <UnitTest name="Level_TileConstructorTest" storage="c:\users\kwhittin\documents\visual studio 2010\projects\csci3097_hw3\csci3097_hw3tests\bin\debug\csci3097_hw3tests.dll" id="92bb13e8-9c9f-15cf-f048-069df2f68c11">
+      <Execution id="aca9f69a-6c9b-4b97-a529-16b54cf46323" />
+      <TestMethod codeBase="C:/Users/kwhittin/Documents/Visual Studio 2010/Projects/CSCI3097_HW3/CSCI3097_HW3Tests/bin/Debug/CSCI3097_HW3Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="CSCI3097_HW3Tests.Level_TileTest, CSCI3097_HW3Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="Level_TileConstructorTest" />
+    </UnitTest>
+    <UnitTest name="vertical_positionTest" storage="c:\users\kwhittin\documents\visual studio 2010\projects\csci3097_hw3\csci3097_hw3tests\bin\debug\csci3097_hw3tests.dll" id="de8e7abc-1c66-b4a2-8977-1f61f1c1646e">
+      <Execution id="5840fa7d-9375-44ec-88d2-54bdf4cf2b3f" />
+      <TestMethod codeBase="C:/Users/kwhittin/Documents/Visual Studio 2010/Projects/CSCI3097_HW3/CSCI3097_HW3Tests/bin/Debug/CSCI3097_HW3Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="CSCI3097_HW3Tests.Level_TileTest, CSCI3097_HW3Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="vertical_positionTest" />
+    </UnitTest>
+    <UnitTest name="PlayerConstructorTest" storage="c:\users\kwhittin\documents\visual studio 2010\projects\csci3097_hw3\csci3097_hw3tests\bin\debug\csci3097_hw3tests.dll" id="661d7459-d0e9-5387-f683-8b5300d13db9">
+      <Execution id="0a9f5f2b-0aed-44e8-9fd7-458c9a87dd67" />
+      <TestMethod codeBase="C:/Users/kwhittin/Documents/Visual Studio 2010/Projects/CSCI3097_HW3/CSCI3097_HW3Tests/bin/Debug/CSCI3097_HW3Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="CSCI3097_HW3Tests.PlayerTest, CSCI3097_HW3Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="PlayerConstructorTest" />
+    </UnitTest>
+    <UnitTest name="heightTest" storage="c:\users\kwhittin\documents\visual studio 2010\projects\csci3097_hw3\csci3097_hw3tests\bin\debug\csci3097_hw3tests.dll" id="e02f3b20-7037-9379-251d-7c6c713315ed">
+      <Execution id="39f59db0-4496-4ff2-aaf1-a73340f3aa2e" />
+      <TestMethod codeBase="C:/Users/kwhittin/Documents/Visual Studio 2010/Projects/CSCI3097_HW3/CSCI3097_HW3Tests/bin/Debug/CSCI3097_HW3Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="CSCI3097_HW3Tests.Level_TileTest, CSCI3097_HW3Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="heightTest" />
+    </UnitTest>
+    <UnitTest name="horizontal_positionTest" storage="c:\users\kwhittin\documents\visual studio 2010\projects\csci3097_hw3\csci3097_hw3tests\bin\debug\csci3097_hw3tests.dll" id="4144e73a-a8fc-e61b-47bf-0b610a8dbb29">
+      <Execution id="9bd5ffc7-ef6b-411c-9aa0-1c012e614c82" />
+      <TestMethod codeBase="C:/Users/kwhittin/Documents/Visual Studio 2010/Projects/CSCI3097_HW3/CSCI3097_HW3Tests/bin/Debug/CSCI3097_HW3Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="CSCI3097_HW3Tests.Level_TileTest, CSCI3097_HW3Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="horizontal_positionTest" />
+    </UnitTest>
+    <UnitTest name="makePassableTest" storage="c:\users\kwhittin\documents\visual studio 2010\projects\csci3097_hw3\csci3097_hw3tests\bin\debug\csci3097_hw3tests.dll" id="e9c563ec-94fc-fdb0-ee03-93cbe141839f">
+      <Execution id="f215ce62-6849-4502-9a43-36e916f8d2d4" />
+      <TestMethod codeBase="C:/Users/kwhittin/Documents/Visual Studio 2010/Projects/CSCI3097_HW3/CSCI3097_HW3Tests/bin/Debug/CSCI3097_HW3Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="CSCI3097_HW3Tests.Level_TileTest, CSCI3097_HW3Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="makePassableTest" />
+    </UnitTest>
+    <UnitTest name="textureSourceTest" storage="c:\users\kwhittin\documents\visual studio 2010\projects\csci3097_hw3\csci3097_hw3tests\bin\debug\csci3097_hw3tests.dll" id="72f490b5-f1bf-989d-0a6d-d9697dab87e1">
+      <Execution id="c030190d-dd03-40b9-ace3-a899e2c42b0a" />
+      <TestMethod codeBase="C:/Users/kwhittin/Documents/Visual Studio 2010/Projects/CSCI3097_HW3/CSCI3097_HW3Tests/bin/Debug/CSCI3097_HW3Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="CSCI3097_HW3Tests.Level_TileTest, CSCI3097_HW3Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="textureSourceTest" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="21bfd64d-cc3c-6e6b-bff1-7309d0309918" executionId="365c8bf9-4598-45f9-81db-8b446dd68805" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="4144e73a-a8fc-e61b-47bf-0b610a8dbb29" executionId="9bd5ffc7-ef6b-411c-9aa0-1c012e614c82" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="55de63b1-75b7-1128-c305-16d1a2a2bdc6" executionId="908c5c10-b0fa-4cc9-8fe2-a67d6f2fe294" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="661d7459-d0e9-5387-f683-8b5300d13db9" executionId="0a9f5f2b-0aed-44e8-9fd7-458c9a87dd67" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="72f490b5-f1bf-989d-0a6d-d9697dab87e1" executionId="c030190d-dd03-40b9-ace3-a899e2c42b0a" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="9063b9f1-aff6-2220-7061-bc20a9791994" executionId="6951e7df-cb81-4cae-8310-167fbd8c1a70" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="92bb13e8-9c9f-15cf-f048-069df2f68c11" executionId="aca9f69a-6c9b-4b97-a529-16b54cf46323" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="c2c9deb0-f466-5f82-446e-1006f227712a" executionId="6a28c238-6a2f-4351-a41f-1b5b5d51c731" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="ced27c20-03d9-48a2-8e07-d3573d810c55" executionId="79ba545a-e7cc-4692-ac19-570bac7c151e" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="de8e7abc-1c66-b4a2-8977-1f61f1c1646e" executionId="5840fa7d-9375-44ec-88d2-54bdf4cf2b3f" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="e02f3b20-7037-9379-251d-7c6c713315ed" executionId="39f59db0-4496-4ff2-aaf1-a73340f3aa2e" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="e9c563ec-94fc-fdb0-ee03-93cbe141839f" executionId="f215ce62-6849-4502-9a43-36e916f8d2d4" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="365c8bf9-4598-45f9-81db-8b446dd68805" testId="21bfd64d-cc3c-6e6b-bff1-7309d0309918" testName="widthTest" computerName="WIN-HG8K34MH15T" duration="00:00:04.0697186" startTime="2012-04-25T17:50:06.8984999-05:00" endTime="2012-04-25T17:50:15.6659809-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Inconclusive" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="365c8bf9-4598-45f9-81db-8b446dd68805">
+      <Output>
+        <ErrorInfo>
+          <Message>Assert.Inconclusive failed. Verify the correctness of this test method.</Message>
+          <StackTrace>   at CSCI3097_HW3Tests.Level_TileTest.widthTest() in C:\Users\kwhittin\Documents\Visual Studio 2010\Projects\CSCI3097_HW3\CSCI3097_HW3Tests\Level_TileTest.cs:line 220
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="9bd5ffc7-ef6b-411c-9aa0-1c012e614c82" testId="4144e73a-a8fc-e61b-47bf-0b610a8dbb29" testName="horizontal_positionTest" computerName="WIN-HG8K34MH15T" duration="00:00:00.0759938" startTime="2012-04-25T17:50:15.9779909-05:00" endTime="2012-04-25T17:50:16.7736164-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Inconclusive" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="9bd5ffc7-ef6b-411c-9aa0-1c012e614c82">
+      <Output>
+        <ErrorInfo>
+          <Message>Assert.Inconclusive failed. Verify the correctness of this test method.</Message>
+          <StackTrace>   at CSCI3097_HW3Tests.Level_TileTest.horizontal_positionTest() in C:\Users\kwhittin\Documents\Visual Studio 2010\Projects\CSCI3097_HW3\CSCI3097_HW3Tests\Level_TileTest.cs:line 172
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="908c5c10-b0fa-4cc9-8fe2-a67d6f2fe294" testId="55de63b1-75b7-1128-c305-16d1a2a2bdc6" testName="makeSolidTest" computerName="WIN-HG8K34MH15T" duration="00:00:00.0008112" startTime="2012-04-25T17:50:16.8204179-05:00" endTime="2012-04-25T17:50:16.8984204-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Inconclusive" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="908c5c10-b0fa-4cc9-8fe2-a67d6f2fe294">
+      <Output>
+        <ErrorInfo>
+          <Message>Assert.Inconclusive failed. A method that does not return a value cannot be verified.</Message>
+          <StackTrace>   at CSCI3097_HW3Tests.Level_TileTest.makeSolidTest() in C:\Users\kwhittin\Documents\Visual Studio 2010\Projects\CSCI3097_HW3\CSCI3097_HW3Tests\Level_TileTest.cs:line 124
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="0a9f5f2b-0aed-44e8-9fd7-458c9a87dd67" testId="661d7459-d0e9-5387-f683-8b5300d13db9" testName="PlayerConstructorTest" computerName="WIN-HG8K34MH15T" duration="00:00:00.5907916" startTime="2012-04-25T17:50:16.8984204-05:00" endTime="2012-04-25T17:50:17.5380409-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Inconclusive" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="0a9f5f2b-0aed-44e8-9fd7-458c9a87dd67">
+      <Output>
+        <ErrorInfo>
+          <Message>Assert.Inconclusive failed. TODO: Implement code to verify target</Message>
+          <StackTrace>   at CSCI3097_HW3Tests.PlayerTest.PlayerConstructorTest() in C:\Users\kwhittin\Documents\Visual Studio 2010\Projects\CSCI3097_HW3\CSCI3097_HW3Tests\PlayerTest.cs:line 81
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="c030190d-dd03-40b9-ace3-a899e2c42b0a" testId="72f490b5-f1bf-989d-0a6d-d9697dab87e1" testName="textureSourceTest" computerName="WIN-HG8K34MH15T" duration="00:00:00.0246537" startTime="2012-04-25T17:50:17.5380409-05:00" endTime="2012-04-25T17:50:17.5692419-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Inconclusive" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="c030190d-dd03-40b9-ace3-a899e2c42b0a">
+      <Output>
+        <ErrorInfo>
+          <Message>Assert.Inconclusive failed. Verify the correctness of this test method.</Message>
+          <StackTrace>   at CSCI3097_HW3Tests.Level_TileTest.textureSourceTest() in C:\Users\kwhittin\Documents\Visual Studio 2010\Projects\CSCI3097_HW3\CSCI3097_HW3Tests\Level_TileTest.cs:line 188
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="6951e7df-cb81-4cae-8310-167fbd8c1a70" testId="9063b9f1-aff6-2220-7061-bc20a9791994" testName="EnemyConstructorTest" computerName="WIN-HG8K34MH15T" duration="00:00:00.0100394" startTime="2012-04-25T17:50:17.5692419-05:00" endTime="2012-04-25T17:50:17.5848424-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Inconclusive" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="6951e7df-cb81-4cae-8310-167fbd8c1a70">
+      <Output>
+        <ErrorInfo>
+          <Message>Assert.Inconclusive failed. TODO: Implement code to verify target</Message>
+          <StackTrace>   at CSCI3097_HW3Tests.EnemyTest.EnemyConstructorTest() in C:\Users\kwhittin\Documents\Visual Studio 2010\Projects\CSCI3097_HW3\CSCI3097_HW3Tests\EnemyTest.cs:line 81
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="aca9f69a-6c9b-4b97-a529-16b54cf46323" testId="92bb13e8-9c9f-15cf-f048-069df2f68c11" testName="Level_TileConstructorTest" computerName="WIN-HG8K34MH15T" duration="00:00:00.0181322" startTime="2012-04-25T17:50:17.5848424-05:00" endTime="2012-04-25T17:50:17.6004429-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Inconclusive" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="aca9f69a-6c9b-4b97-a529-16b54cf46323">
+      <Output>
+        <ErrorInfo>
+          <Message>Assert.Inconclusive failed. TODO: Implement code to verify target</Message>
+          <StackTrace>   at CSCI3097_HW3Tests.Level_TileTest.Level_TileConstructorTest() in C:\Users\kwhittin\Documents\Visual Studio 2010\Projects\CSCI3097_HW3\CSCI3097_HW3Tests\Level_TileTest.cs:line 79
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="6a28c238-6a2f-4351-a41f-1b5b5d51c731" testId="c2c9deb0-f466-5f82-446e-1006f227712a" testName="makePlatformTest" computerName="WIN-HG8K34MH15T" duration="00:00:00.0087694" startTime="2012-04-25T17:50:17.6004429-05:00" endTime="2012-04-25T17:50:17.6160434-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Inconclusive" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="6a28c238-6a2f-4351-a41f-1b5b5d51c731">
+      <Output>
+        <ErrorInfo>
+          <Message>Assert.Inconclusive failed. A method that does not return a value cannot be verified.</Message>
+          <StackTrace>   at CSCI3097_HW3Tests.Level_TileTest.makePlatformTest() in C:\Users\kwhittin\Documents\Visual Studio 2010\Projects\CSCI3097_HW3\CSCI3097_HW3Tests\Level_TileTest.cs:line 109
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="79ba545a-e7cc-4692-ac19-570bac7c151e" testId="ced27c20-03d9-48a2-8e07-d3573d810c55" testName="collisionTypeTest" computerName="WIN-HG8K34MH15T" duration="00:00:00.0072427" startTime="2012-04-25T17:50:17.6160434-05:00" endTime="2012-04-25T17:50:17.6316439-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Inconclusive" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="79ba545a-e7cc-4692-ac19-570bac7c151e">
+      <Output>
+        <ErrorInfo>
+          <Message>Assert.Inconclusive failed. Verify the correctness of this test method.</Message>
+          <StackTrace>   at CSCI3097_HW3Tests.Level_TileTest.collisionTypeTest() in C:\Users\kwhittin\Documents\Visual Studio 2010\Projects\CSCI3097_HW3\CSCI3097_HW3Tests\Level_TileTest.cs:line 140
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="5840fa7d-9375-44ec-88d2-54bdf4cf2b3f" testId="de8e7abc-1c66-b4a2-8977-1f61f1c1646e" testName="vertical_positionTest" computerName="WIN-HG8K34MH15T" duration="00:00:00.0197199" startTime="2012-04-25T17:50:17.6316439-05:00" endTime="2012-04-25T17:50:17.6940459-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Inconclusive" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="5840fa7d-9375-44ec-88d2-54bdf4cf2b3f">
+      <Output>
+        <ErrorInfo>
+          <Message>Assert.Inconclusive failed. Verify the correctness of this test method.</Message>
+          <StackTrace>   at CSCI3097_HW3Tests.Level_TileTest.vertical_positionTest() in C:\Users\kwhittin\Documents\Visual Studio 2010\Projects\CSCI3097_HW3\CSCI3097_HW3Tests\Level_TileTest.cs:line 204
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="39f59db0-4496-4ff2-aaf1-a73340f3aa2e" testId="e02f3b20-7037-9379-251d-7c6c713315ed" testName="heightTest" computerName="WIN-HG8K34MH15T" duration="00:00:00.0087968" startTime="2012-04-25T17:50:17.6940459-05:00" endTime="2012-04-25T17:50:17.7564479-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Inconclusive" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="39f59db0-4496-4ff2-aaf1-a73340f3aa2e">
+      <Output>
+        <ErrorInfo>
+          <Message>Assert.Inconclusive failed. Verify the correctness of this test method.</Message>
+          <StackTrace>   at CSCI3097_HW3Tests.Level_TileTest.heightTest() in C:\Users\kwhittin\Documents\Visual Studio 2010\Projects\CSCI3097_HW3\CSCI3097_HW3Tests\Level_TileTest.cs:line 156
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="f215ce62-6849-4502-9a43-36e916f8d2d4" testId="e9c563ec-94fc-fdb0-ee03-93cbe141839f" testName="makePassableTest" computerName="WIN-HG8K34MH15T" duration="00:00:00.1863025" startTime="2012-04-25T17:50:17.8032494-05:00" endTime="2012-04-25T17:50:18.0996589-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Inconclusive" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="f215ce62-6849-4502-9a43-36e916f8d2d4">
+      <Output>
+        <ErrorInfo>
+          <Message>Assert.Inconclusive failed. A method that does not return a value cannot be verified.</Message>
+          <StackTrace>   at CSCI3097_HW3Tests.Level_TileTest.makePassableTest() in C:\Users\kwhittin\Documents\Visual Studio 2010\Projects\CSCI3097_HW3\CSCI3097_HW3Tests\Level_TileTest.cs:line 94
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+  </Results>
+</TestRun>

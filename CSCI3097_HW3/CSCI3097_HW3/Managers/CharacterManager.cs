@@ -102,7 +102,7 @@ namespace CSCI3097_HW3.Managers
       if (keyboard.IsKeyDown(Keys.Right))
       {
         //move the player right
-        this.player_character.setRight();
+        this.player_character.setRightMove();
       }
       //if the space bar has been pressed
       if (keyboard.IsKeyDown(Keys.Space))

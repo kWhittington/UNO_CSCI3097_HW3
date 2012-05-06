@@ -9,11 +9,11 @@ namespace CSCI3097_HW3Tests
     
     
     /// <summary>
-    ///This is a test class for PlayerTest and is intended
-    ///to contain all PlayerTest Unit Tests
+    ///This is a test class for EnemyTest and is intended
+    ///to contain all EnemyTest Unit Tests
     ///</summary>
   [TestClass()]
-  public class PlayerTest
+  public class EnemyTest
   {
 
 
@@ -67,17 +67,17 @@ namespace CSCI3097_HW3Tests
 
 
     /// <summary>
-    ///A test for Player Constructor
+    ///A test for Enemy Constructor
     ///</summary>
     [TestMethod()]
-    public void PlayerConstructorTest()
+    public void EnemyConstructorTest()
     {
       Texture2D texture = null; // TODO: Initialize to an appropriate value
       Vector2 position = new Vector2(); // TODO: Initialize to an appropriate value
       float walk_speed = 0F; // TODO: Initialize to an appropriate value
       float run_speed = 0F; // TODO: Initialize to an appropriate value
       float jump_speed = 0F; // TODO: Initialize to an appropriate value
-      Player target = new Player(texture, position, walk_speed, run_speed, jump_speed);
+      Enemy target = new Enemy(texture, position, walk_speed, run_speed, jump_speed);
       Assert.Inconclusive("TODO: Implement code to verify target");
     }
   }
