@@ -26,6 +26,7 @@ namespace CSCI3097_HW3.Character
     protected bool is_falling;
     protected Vector2 position;
     protected Vector2 jumping_point;
+    protected float max_jump_height;
 
     /////////////////////////////////////////////////////////////////
     #region QUERIES
@@ -159,6 +160,29 @@ namespace CSCI3097_HW3.Character
       return result;
     }
 
+    /// <summary>
+    /// Will return whether or not the character has reached
+    /// the maximum height achievable by jumping.
+    /// ENSURE:   if max height has been reached,
+    ///            return true
+    ///           otherwise,
+    ///            return false
+    /// </summary>
+    public bool jumpHeightReached()
+    {
+      //the result will initially be set to false
+      bool result = false;
+
+      //NOTE: might want to go by current_velocity instead of position
+      //if the player has reached or exceded the max jump height
+      if (this.position.Y <= (this.jumping_point.Y - this.max_jump_height))
+      {
+        //then, yes, they've reached the max jumping height
+        result = true;
+      }
+
+      return result;
+    }
     #endregion QUERIES
     /////////////////////////////////////////////////////////////////
 
@@ -188,7 +212,15 @@ namespace CSCI3097_HW3.Character
     /// </summary>
     public void setLeftMove()
     {
-      this.position.X = this.position.X - this.current_velocity.X;
+      //this is old code, should be removed
+      //this.position.X = this.position.X - this.current_velocity.X;
+
+      //the movement should be applied to the current velocity
+      //this.current_velocity.X = this.current_velocity.X - this.walk_velocity;
+      this.current_velocity.X = 
+        (this.is_running == false) ? 
+        this.current_velocity.X - this.walk_velocity :
+        this.current_velocity.X - this.run_velocity;
     }
 
     /// <summary>
@@ -203,7 +235,15 @@ namespace CSCI3097_HW3.Character
     /// </summary>
     public void setRightMove()
     {
-      this.position.X = this.position.X + this.current_velocity.X;
+      //this is old code, should be removed
+      //this.position.X = this.position.X + this.current_velocity.X;
+
+      //the movement should be applied to the current_velocity
+      //this.current_velocity.X = this.current_velocity.X + this.walk_velocity;
+      this.current_velocity.X =
+        (this.is_running == false) ?
+        this.current_velocity.X + this.walk_velocity :
+        this.current_velocity.X + this.run_velocity;
     }
 
     /// <summary>
@@ -228,6 +268,7 @@ namespace CSCI3097_HW3.Character
       this.position.X = this.position.X + this.current_velocity.X;
       //apply any stored vertical forces to the character
       this.position.Y = this.position.Y + this.current_velocity.Y;
+      this.resetVelocity();
     }
 
     /// <summary>
@@ -242,7 +283,7 @@ namespace CSCI3097_HW3.Character
       //turn the flag off
       this.is_running = false;
       //set the current horizontal velocity to the walking velocity
-      this.current_velocity.X = this.walk_velocity;
+      //this.current_velocity.X = this.walk_velocity;
     }
 
     /// <summary>
@@ -257,7 +298,7 @@ namespace CSCI3097_HW3.Character
       //turn the flag on
       this.is_running = true;
       //set the current horizontal velocity to the running velocity
-      this.current_velocity.X = this.run_velocity;
+      //this.current_velocity.X = this.run_velocity;
     }
 
     /// <summary>
@@ -269,12 +310,16 @@ namespace CSCI3097_HW3.Character
     /// </summary>
     public void jump()
     {
+      //if not already jumping, save the new jump point
+      if (this.is_jumping == false)
+      {
+        this.jumping_point = this.position;
+      }
+
       //make sure the fall flag is off
       this.is_falling = false;
       //turn the flag on
       this.is_jumping = true;
-      //save the current jumping point
-      this.jumping_point = this.position;
       //apply a negative force to Y (up is negative, down positive)
       this.current_velocity.Y = (0 - this.jump_velocity);
     }
@@ -319,6 +364,8 @@ namespace CSCI3097_HW3.Character
     /// </summary>
     public void resetVelocity()
     {
+      this.current_velocity.X = 0;
+      this.current_velocity.Y = 0;
     }
 
     #endregion COMMANDS

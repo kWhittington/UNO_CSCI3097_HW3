@@ -72,13 +72,13 @@ namespace CSCI3097_HW3Tests
     [TestMethod()]
     public void PlayerConstructorTest()
     {
-      Texture2D texture = null; // TODO: Initialize to an appropriate value
-      Vector2 position = new Vector2(); // TODO: Initialize to an appropriate value
-      float walk_speed = 0F; // TODO: Initialize to an appropriate value
-      float run_speed = 0F; // TODO: Initialize to an appropriate value
-      float jump_speed = 0F; // TODO: Initialize to an appropriate value
-      Player target = new Player(texture, position, walk_speed, run_speed, jump_speed);
-      Assert.Inconclusive("TODO: Implement code to verify target");
+      //Texture2D texture = null; // TODO: Initialize to an appropriate value
+      //Vector2 position = new Vector2(); // TODO: Initialize to an appropriate value
+      //float walk_speed = 0F; // TODO: Initialize to an appropriate value
+      //float run_speed = 0F; // TODO: Initialize to an appropriate value
+      //float jump_speed = 0F; // TODO: Initialize to an appropriate value
+      //Player target = new Player(texture, position, walk_speed, run_speed, jump_speed);
+      //Assert.Inconclusive("TODO: Implement code to verify target");
     }
   }
 }

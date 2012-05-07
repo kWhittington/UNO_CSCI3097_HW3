@@ -24,10 +24,12 @@ namespace CSCI3097_HW3.Managers
     #region INSTANCE VARIABLES
     //there will only be one player character allowed for now
     private Player player_character;
-    private Vector2 player_old_position;
+    //forgotten what this was here for, might not be needed
+    //private Vector2 player_old_position;
     private const float player_walk_speed = 4;
     private const float player_run_speed = 8;
     private const float player_jump_speed = 10;
+    private const float player_jump_height = 11;
     //here will be the rest of the enemy characters
     private LinkedList<Enemy> enemies;
     #endregion INSTANCE VARIABLES
@@ -37,9 +39,9 @@ namespace CSCI3097_HW3.Managers
     {
       // TODO: Construct any child components here
       this.player_character = new Player(player_texture, player_position, player_walk_speed,
-        player_run_speed, player_jump_speed);
-      this.player_old_position = new Vector2(this.player_character.BoundingBox().Location.X,
-        this.player_character.BoundingBox().Location.Y);
+        player_run_speed, player_jump_speed, player_jump_height);
+      //this.player_old_position = new Vector2(this.player_character.BoundingBox().Location.X,
+        //this.player_character.BoundingBox().Location.Y);
     }
 
     #region QUERIES
@@ -84,7 +86,42 @@ namespace CSCI3097_HW3.Managers
       // TODO: Add your update code here
       KeyboardState keyboard = Keyboard.GetState();
       this.updatePlayer(keyboard);
+      //this.checkForFalling(this.player_character);
+
+      this.player_character.moveCharacter();
+
       base.Update(gameTime);
+    }
+
+    /// <summary>
+    /// Will check if the given character will hit ground,
+    /// if so, their position will be set accordingly and grounded.
+    /// REQUIRE:  the given character != null
+    /// ENSURE:   if the character will hit ground,
+    ///            set their position and ground them.
+    /// </summary>
+    private void checkForGround(Character.Character character)
+    {
+
+    }
+
+    /// <summary>
+    /// Will check if the given character is grounded,
+    /// and make them fall if necessary.
+    /// REQUIRE:  The given character != null
+    /// ENSURE:   if the given character is not grounded,
+    ///            the character will be told to fall
+    ///           otherwise,
+    ///            they are left alone
+    /// </summary>
+    private void checkForFalling(Character.Character character)
+    {
+      //if the character is falling
+      if (character.isGrounded() == false)
+      {
+        //if not, tell the character to fall
+        character.fall();
+      }
     }
 
     /// <summary>
@@ -104,11 +141,27 @@ namespace CSCI3097_HW3.Managers
         //move the player right
         this.player_character.setRightMove();
       }
-      //if the space bar has been pressed
-      if (keyboard.IsKeyDown(Keys.Space))
+
+      //if the player is jumping
+      if (this.player_character.isJumping() == true)
       {
-        //if the player isn't already jumping
-        if (this.player_character.isJumping())
+        //if the player has reached the max jumping height
+        if (this.player_character.jumpHeightReached())
+        {
+          //then begin their decent
+          this.player_character.fall();
+        }
+        //otherwise, the player is still jumping
+        else
+        {
+          this.player_character.jump();
+        }
+      }
+      //otherwise, the player is not jumping
+      else
+      {
+        //if the space bar has been pressed
+        if (keyboard.IsKeyDown(Keys.Space))
         {
           //make the player jump
           this.player_character.jump();
