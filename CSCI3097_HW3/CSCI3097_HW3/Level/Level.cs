@@ -38,6 +38,7 @@ namespace CSCI3097_HW3.Level
       this.character_manager = new Managers.CharacterManager(game, player_texture, player_position);
       this.tile_sheet_name = tile_sheet;
       this.level_sheet_stream = level_sheet;
+      
     }
 
     /// <summary>
@@ -221,6 +222,9 @@ namespace CSCI3097_HW3.Level
       
       //load the level
       this.loadLevel(level_sheet_stream);
+      Texture2D enemy_texture = Game.Content.Load<Texture2D>("goldteeth");
+      Vector2 enemy_start = new Vector2(400, 200);
+      this.character_manager.addEnemy(enemy_texture, enemy_start);
 
       base.LoadContent();
     }
@@ -231,9 +235,168 @@ namespace CSCI3097_HW3.Level
     /// <param name="gameTime">Provides a snapshot of timing values.</param>
     public override void Update(GameTime gameTime)
     {
+      //check for collisions
+      //this.checkPlayerCollision();
+      this.checkCharacterCollision(this.character_manager.playerCharacter());
+      foreach (Character.Enemy enemy in this.character_manager.enemyList())
+      {
+        this.checkCharacterCollision(enemy);
+      }
+      //move the characters
+      this.character_manager.playerCharacter().moveCharacter();
+      foreach (Character.Enemy enemy in this.character_manager.enemyList())
+      {
+        enemy.moveCharacter();
+      }
       
       base.Update(gameTime);
     }
+
+    /// <summary>
+    /// Will check if the given character has collided with a tile
+    /// in the level and then handle the position correction.
+    /// ENSURE:   the given character will not be colliding with any tiles.
+    /// </summary>
+    private void checkCharacterCollision(Character.Character character)
+    {
+      //for every tile in the level
+      foreach (Tile tile in this.level_tiles)
+      {
+        //save the character's bounding box
+        Rectangle character_bounds = character.BoundingBox();
+
+        //now get the character's current velocity
+        Vector2 character_velocity = character.currentSpeed();
+        //compute the future position of the character
+        Rectangle future_bounds = new Rectangle(
+          character_bounds.X + (int)character_velocity.X,
+          character_bounds.Y + (int)character_velocity.Y,
+          character_bounds.Width, character_bounds.Height);
+
+        //check if the character WILL collide with this tile
+        if (tile.collidesWith(future_bounds)){
+          //find how much overlap is occuring
+          Rectangle intersection = Rectangle.Intersect(tile.destinationRectangle, future_bounds);
+
+          //alter the characters velocity to take the collision into account
+
+          //if the character has horizontal velocity
+          //and isn't jumping or falling
+          if ((character.isJumping() == false && character.isFalling() == false)
+            && character_velocity.X != 0)
+          {
+            //compute the horizontal offset
+            int offset = (character_velocity.X > 0) ?
+              (intersection.X - intersection.Right) : //negative offset if positive velocity
+              (intersection.Right - intersection.X); //positive offset if negative velocity
+
+            //add the offset to the velocity value
+            character_velocity.X = character_velocity.X + offset;
+          }
+          //if the character has vertical velocity
+          if (character_velocity.Y != 0)
+          {
+            //compute the vertical offset
+            int offset;
+
+            //if the character has a positive vertical velocity
+            if (character_velocity.Y > 0)
+            {
+              //then the offset needs to be negative
+              offset = (intersection.Y - intersection.Bottom) -1;
+              //this also means the character has hit ground
+              character.ground();
+            }
+            //otherwise, the velocity is negative
+            else
+            {
+              //so the offset needs to be positive
+              offset = (intersection.Bottom - intersection.Y);
+            }
+
+            //add the offset to the velocity value
+            character_velocity.Y = character_velocity.Y + offset;
+          }
+
+          //give the player it's new position
+          character.setVelocity(character_velocity);
+        }
+      }
+    }
+
+    /// <summary>
+    /// Will check if the player character has collided with a tile
+    /// in the level and then handle the correction.
+    /// ENSURE:   the player character will not collided with any tiles
+    /// </summary>
+    //private void checkPlayerCollision()
+    //{
+    //  //for every tile in the level
+    //  foreach (Tile tile in this.level_tiles)
+    //  {
+    //    //save the player's bounding box
+    //    Rectangle character_bounds = this.character_manager.playerCharacter().BoundingBox();
+        
+    //    //now get the player's current velocity
+    //    Vector2 character_velocity = this.character_manager.playerCharacter().currentSpeed();
+    //    //compute the future position of the character
+    //    Rectangle future_bounds = new Rectangle(
+    //      character_bounds.X + (int)character_velocity.X,
+    //      character_bounds.Y + (int)character_velocity.Y,
+    //      character_bounds.Width, character_bounds.Height);
+
+    //    //check if the character WILL collide with this tile
+    //    if (tile.collidesWith(future_bounds))
+    //    {
+    //      //find how much overlap is occuring
+    //      Rectangle intersection = Rectangle.Intersect(tile.destinationRectangle, future_bounds);
+
+    //      //alter the characters velocity to take the collision into account
+          
+    //      //if the character has horizontal velocity
+    //      //and isn't jumping or falling
+    //      if ((this.character_manager.playerCharacter().isJumping() == false
+    //        && this.character_manager.playerCharacter().isFalling() == false)
+    //        && character_velocity.X != 0)
+    //      {
+    //        //compute the horizontal offset
+    //        int offset = (character_velocity.X > 0) ?
+    //          (intersection.X - intersection.Right) : //negative offset if positive velocity
+    //          (intersection.Right - intersection.X); //positive offset if negative velocity
+
+    //        //add the offset to the velocity value
+    //        character_velocity.X = character_velocity.X + offset;
+    //      }
+    //      //if the character has vertical velocity
+    //      if (character_velocity.Y != 0)
+    //      {
+    //        //compute the vertical offset
+    //        int offset;
+            
+    //        //if the character has a positive vertical velocity
+    //        if (character_velocity.Y > 0)
+    //        {
+    //          //then the offset needs to be negative
+    //          offset = (intersection.Y - intersection.Bottom);
+    //          //this also means the character has hit ground
+    //          this.character_manager.playerCharacter().ground();
+    //        }
+    //        //otherwise, the velocity is negative
+    //        else
+    //        {
+    //          //so the offset needs to be positive
+    //          offset = (intersection.Bottom - intersection.Y);
+    //        }
+            
+    //        //add the offset to the velocity value
+    //        character_velocity.Y = character_velocity.Y + offset;
+    //      }
+
+    //      //give the player it's new position
+    //      this.character_manager.playerCharacter().setVelocity(character_velocity);
+    //    }
+    //  }
+    //}
 
     /// <summary>
     /// Allows the game component to draw itself.
@@ -246,13 +409,20 @@ namespace CSCI3097_HW3.Level
 
       spriteBatch.Begin();
       //below draws the player character with no scaling
-      //spriteBatch.Draw(this.character_manager.playerCharacter().Texture(),
-        //this.character_manager.playerCharacter().currentPosition(), Color.White);
-
-      //below draws the player character with 1/2 scaling
       spriteBatch.Draw(this.character_manager.playerCharacter().Texture(),
-        this.character_manager.playerCharacter().currentPosition(), null,
-        Color.White, 0f, new Vector2(0, 0), .5f, SpriteEffects.None, 0);
+        this.character_manager.playerCharacter().currentPosition(), Color.White);
+
+      //loop through and draw each enemy
+      foreach (Character.Enemy enemy in this.character_manager.enemyList())
+      {
+        spriteBatch.Draw(enemy.Texture(), enemy.currentPosition(), Color.White);
+      }
+
+      //could be taken out
+      //below draws the player character with 1/2 scaling
+      //spriteBatch.Draw(this.character_manager.playerCharacter().Texture(),
+      //  this.character_manager.playerCharacter().currentPosition(), null,
+      //  Color.White, 0f, new Vector2(0, 0), .5f, SpriteEffects.None, 0);
       
       //loop through and draw the level tiles
       foreach (Tile tile in this.level_tiles)
@@ -329,6 +499,35 @@ namespace CSCI3097_HW3.Level
       internal TileCollision collisionType
       {
         get { return this.collision; }
+      }
+
+      /// <summary>
+      /// Will return whether or not this tile collides
+      /// with the given bounding box.
+      /// REQUIRE:  the given bounding box != null
+      /// ENSURE:   if the given rectangle overlaps with this tile's box,
+      ///            return true
+      ///           otherwise,
+      ///            return false
+      /// </summary>
+      internal bool collidesWith(Rectangle object_box)
+      {
+        //initially set the result to false
+        bool result = false;
+
+        //if this tile is able to collide with the object
+        if (this.collision.Equals(TileCollision.NO_COLLISION) == false)
+        {
+          //and if the object overlaps with this tile's box
+          if (this.dimensions.Intersects(object_box) == true)
+          {
+            //then there is a collision occuring
+            result = true;
+          }
+        }
+
+        //return whatever the computed result is
+        return result;
       }
 
       /// <summary>

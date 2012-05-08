@@ -22,14 +22,16 @@ namespace CSCI3097_HW3.Character
     ///            this.boundingBox().X,Y == given.position.X,Y
     /// </summary>
     public Enemy(Texture2D texture, Vector2 position, float walk_speed,
-      float run_speed, float jump_speed)
+      float run_speed, float jump_speed, float jump_height)
     {
       this.texture = texture;
       this.position = position;
       this.walk_velocity = walk_speed;
       this.run_velocity = run_speed;
       this.jump_velocity = jump_speed;
-      this.current_velocity = new Vector2(walk_speed, 0);
+      this.fall_velocity = jump_speed;
+      this.max_jump_height = jump_height;
+      this.current_velocity = new Vector2(0, 0);
       //start the enemy off as alive
       this.is_alive = true;
     }

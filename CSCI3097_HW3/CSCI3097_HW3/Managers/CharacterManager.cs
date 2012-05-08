@@ -29,7 +29,11 @@ namespace CSCI3097_HW3.Managers
     private const float player_walk_speed = 4;
     private const float player_run_speed = 8;
     private const float player_jump_speed = 10;
-    private const float player_jump_height = 11;
+    private const float player_jump_height = 100;
+    private const float enemy_walk_speed = 4;
+    private const float enemy_run_speed = 8;
+    private const float enemy_jump_speed = 10;
+    private const float enemy_jump_height = 50;
     //here will be the rest of the enemy characters
     private LinkedList<Enemy> enemies;
     #endregion INSTANCE VARIABLES
@@ -40,8 +44,10 @@ namespace CSCI3097_HW3.Managers
       // TODO: Construct any child components here
       this.player_character = new Player(player_texture, player_position, player_walk_speed,
         player_run_speed, player_jump_speed, player_jump_height);
+      this.player_character.fall();
       //this.player_old_position = new Vector2(this.player_character.BoundingBox().Location.X,
         //this.player_character.BoundingBox().Location.Y);
+      this.enemies = new LinkedList<Enemy>();
     }
 
     #region QUERIES
@@ -56,6 +62,15 @@ namespace CSCI3097_HW3.Managers
     }
 
     /// <summary>
+    /// Will return the current listing of enemies.
+    /// ENSURE:   returns this.enemies
+    /// </summary>
+    public LinkedList<Enemy> enemyList()
+    {
+      return this.enemies;
+    }
+
+    /// <summary>
     /// Will return whether or not the player character is alive.
     /// ENSURE:   returns this.player_character.isAlive()
     /// </summary>
@@ -67,6 +82,22 @@ namespace CSCI3097_HW3.Managers
     #endregion QUERIES
 
     #region COMMANDS
+    /// <summary>
+    /// Will create and add a new enemy character with the given texture.
+    /// REQUIRE:  given texture != null
+    /// ENSURE:   this.enemies.contains(new enemy)
+    /// </summary>
+    public void addEnemy(Texture2D texture, Vector2 start_position)
+    {
+      //create the new enemy
+      Enemy new_enemy = new Enemy(texture, start_position, enemy_walk_speed,
+        enemy_run_speed, enemy_jump_speed, enemy_jump_height);
+      new_enemy.fall();
+
+      //now add it to the enemy list
+      this.enemies.AddFirst(new_enemy);
+    }
+
     /// <summary>
     /// Allows the game component to perform any initialization it needs to before starting
     /// to run.  This is where it can query for any required services and load content.
@@ -86,9 +117,13 @@ namespace CSCI3097_HW3.Managers
       // TODO: Add your update code here
       KeyboardState keyboard = Keyboard.GetState();
       this.updatePlayer(keyboard);
+      foreach (Enemy enemy in this.enemies)
+      {
+        this.updateCharacter(enemy);
+      }
       //this.checkForFalling(this.player_character);
 
-      this.player_character.moveCharacter();
+      //this.player_character.moveCharacter();
 
       base.Update(gameTime);
     }
@@ -120,6 +155,34 @@ namespace CSCI3097_HW3.Managers
       if (character.isGrounded() == false)
       {
         //if not, tell the character to fall
+        character.fall();
+      }
+    }
+
+    /// <summary>
+    /// Will update the given character.
+    /// </summary>
+    private void updateCharacter(Character.Character character)
+    {
+      //if the player is jumping
+      if (character.isJumping() == true)
+      {
+        //if the player has reached the max jumping height
+        if (character.jumpHeightReached())
+        {
+          //then begin their decent
+          character.fall();
+        }
+        //otherwise, the player is still jumping
+        else
+        {
+          character.jump();
+        }
+      }
+      //or if the player is falling
+      else if (character.isFalling() == true)
+      {
+        //make them fall
         character.fall();
       }
     }
@@ -157,7 +220,12 @@ namespace CSCI3097_HW3.Managers
           this.player_character.jump();
         }
       }
-      //otherwise, the player is not jumping
+      //or if the player is falling
+      else if (this.player_character.isFalling() == true)
+      {
+        //make them fall
+        this.player_character.fall();
+      }
       else
       {
         //if the space bar has been pressed

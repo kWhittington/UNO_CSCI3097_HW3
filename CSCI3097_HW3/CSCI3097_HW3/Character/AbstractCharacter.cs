@@ -138,6 +138,19 @@ namespace CSCI3097_HW3.Character
     }
 
     /// <summary>
+    /// Will return whether or not the character is currently falling.
+    /// ENSURE:   if the character is falling,
+    ///            return true
+    ///           otherwise,
+    ///            return false
+    /// </summary>
+    public bool isFalling()
+    {
+      //return is_falling
+      return this.is_falling;
+    }
+
+    /// <summary>
     /// Will return whether or not this character is grounded
     /// on a surface and not falling or jumping currently.
     /// ENSURE:   if the character has a vertical velocity,
@@ -198,6 +211,38 @@ namespace CSCI3097_HW3.Character
     public void kill()
     {
       this.is_alive = false;
+    }
+
+    /// <summary>
+    /// Will set this character's position to the given 2D coordinate.
+    /// REQUIRE:  given position != null
+    /// ENSURE:   this character's new position == given position
+    /// </summary>
+    public void setPosition(Vector2 new_position)
+    {
+      this.position = new_position;
+    }
+
+    /// <summary>
+    /// Will set this character's velocity to the given values.
+    /// REQUIRE:  given horizontal and vertical forces != null
+    /// ENSURE:   this character's new velocity.X and Y equal the
+    ///            given horizontal and vertical forces respectively
+    /// </summary>
+    public void setVelocity(int horizontal, int vertical)
+    {
+      this.current_velocity.X = horizontal;
+      this.current_velocity.Y = vertical;
+    }
+
+    /// <summary>
+    /// Will set this character's velocity to the given vector.
+    /// REQUIRE:  given 2D vector != null
+    /// ENSURE:   this character's new velocity == given velocity
+    /// </summary>
+    public void setVelocity(Vector2 new_velocity)
+    {
+      this.current_velocity = new_velocity;
     }
 
     /// <summary>

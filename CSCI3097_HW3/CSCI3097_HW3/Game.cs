@@ -38,7 +38,7 @@ namespace CSCI3097_HW3
     protected override void Initialize()
     {
       // TODO: Add your initialization logic here
-      level_manager = new Managers.LevelManager(this, "starman", new Vector2(50, 50), "tileset-platformer", "level_one.txt");
+      level_manager = new Managers.LevelManager(this, "starman_small", new Vector2(50, 50), "tileset-platformer", "level_one.txt");
       Components.Add(level_manager);
       base.Initialize();
     }

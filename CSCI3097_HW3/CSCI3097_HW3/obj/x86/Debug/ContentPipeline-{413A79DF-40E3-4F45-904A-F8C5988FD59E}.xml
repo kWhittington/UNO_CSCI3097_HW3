@@ -19,6 +19,24 @@
       <Output>C:\Users\kwhittin\Documents\Visual Studio 2010\Projects\CSCI3097_HW3\CSCI3097_HW3\CSCI3097_HW3\bin\x86\Debug\Content\tileset-platformer.xnb</Output>
       <Time>2012-04-23T20:50:10.019928-05:00</Time>
     </Item>
+    <Item>
+      <Source>goldteeth.png</Source>
+      <Name>goldteeth</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\kwhittin\Documents\Visual Studio 2010\Projects\CSCI3097_HW3\CSCI3097_HW3\CSCI3097_HW3\bin\x86\Debug\Content\goldteeth.xnb</Output>
+      <Time>2012-05-07T16:36:53.1185904-05:00</Time>
+    </Item>
+    <Item>
+      <Source>starman_small.png</Source>
+      <Name>starman_small</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\kwhittin\Documents\Visual Studio 2010\Projects\CSCI3097_HW3\CSCI3097_HW3\CSCI3097_HW3\bin\x86\Debug\Content\starman_small.xnb</Output>
+      <Time>2012-05-07T16:40:32.5758958-05:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <ContentProjectGUID>{413A79DF-40E3-4F45-904A-F8C5988FD59E}</ContentProjectGUID>

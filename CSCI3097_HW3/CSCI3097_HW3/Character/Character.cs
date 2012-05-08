@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 
 namespace CSCI3097_HW3.Character
 {
@@ -12,6 +13,11 @@ namespace CSCI3097_HW3.Character
   /// </summary>
   interface Character
   {
+    /// <summary>
+    /// Will return the texture of this character.
+    /// </summary>
+    Texture2D Texture();
+    
     /// <summary>
     /// Will return the velocity of this charcter
     /// at the moment the method is called.
@@ -83,6 +89,15 @@ namespace CSCI3097_HW3.Character
     bool isJumping();
 
     /// <summary>
+    /// Will return whether or not the character is currently falling.
+    /// ENSURE:   if the character is falling,
+    ///            return true
+    ///           otherwise,
+    ///            return false
+    /// </summary>
+    bool isFalling();
+
+    /// <summary>
     /// Will return whether or not this character is grounded
     /// on a surface and not falling or jumping currently.
     /// ENSURE:   if the character has a vertical velocity,
@@ -93,12 +108,44 @@ namespace CSCI3097_HW3.Character
     bool isGrounded();
 
     /// <summary>
+    /// Will return whether or not the character has reached
+    /// the maximum height achievable by jumping.
+    /// ENSURE:   if max height has been reached,
+    ///            return true
+    ///           otherwise,
+    ///            return false
+    /// </summary>
+    bool jumpHeightReached();
+
+    /// <summary>
     /// Will kill the character, what else is there to say really?
     /// REQUIRE:  you don't want to use the character anymore
     ///            &&/|| it really deserves to be dead
     /// ENSURE:   this.isAlive() == false
     /// </summary>
     void kill();
+
+    /// <summary>
+    /// Will set this character's position to the given 2D coordinate.
+    /// REQUIRE:  given position != null
+    /// ENSURE:   this character's new position == given position
+    /// </summary>
+    void setPosition(Vector2 new_position);
+
+    /// <summary>
+    /// Will set this character's velocity to the given values.
+    /// REQUIRE:  given horizontal and vertical forces != null
+    /// ENSURE:   this character's new velocity.X and Y equal the
+    ///            given horizontal and vertical forces respectively
+    /// </summary>
+    void setVelocity(int horizontal, int vertical);
+
+    /// <summary>
+    /// Will set this character's velocity to the given vector.
+    /// REQUIRE:  given 2D vector != null
+    /// ENSURE:   this character's new velocity == given velocity
+    /// </summary>
+    void setVelocity(Vector2 new_velocity);
 
     /// <summary>
     /// Will apply a negative horizontal force to this character's
