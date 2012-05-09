@@ -7,7 +7,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\kWhittin\Documents\Visual Studio 2010\Projects\CSCI3097_Final\CSCI3097_HW3\CSCI3097_HW3\bin\x86\Debug\Content\starman.xnb</Output>
+      <Output>C:\Users\kWhittin\Documents\Visual Studio 2010\Projects\CSCI3097_Final\CSCI3097_HW3\CSCI3097_HW3\bin\Xbox 360\Debug\Content\starman.xnb</Output>
       <Time>2012-05-09T01:42:25.8593061-05:00</Time>
     </Item>
     <Item>
@@ -16,7 +16,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\kWhittin\Documents\Visual Studio 2010\Projects\CSCI3097_Final\CSCI3097_HW3\CSCI3097_HW3\bin\x86\Debug\Content\tileset-platformer.xnb</Output>
+      <Output>C:\Users\kWhittin\Documents\Visual Studio 2010\Projects\CSCI3097_Final\CSCI3097_HW3\CSCI3097_HW3\bin\Xbox 360\Debug\Content\tileset-platformer.xnb</Output>
       <Time>2012-05-09T01:42:25.8593061-05:00</Time>
     </Item>
     <Item>
@@ -25,7 +25,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\kWhittin\Documents\Visual Studio 2010\Projects\CSCI3097_Final\CSCI3097_HW3\CSCI3097_HW3\bin\x86\Debug\Content\goldteeth.xnb</Output>
+      <Output>C:\Users\kWhittin\Documents\Visual Studio 2010\Projects\CSCI3097_Final\CSCI3097_HW3\CSCI3097_HW3\bin\Xbox 360\Debug\Content\goldteeth.xnb</Output>
       <Time>2012-05-09T01:42:25.8437061-05:00</Time>
     </Item>
     <Item>
@@ -34,7 +34,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\kWhittin\Documents\Visual Studio 2010\Projects\CSCI3097_Final\CSCI3097_HW3\CSCI3097_HW3\bin\x86\Debug\Content\starman_small.xnb</Output>
+      <Output>C:\Users\kWhittin\Documents\Visual Studio 2010\Projects\CSCI3097_Final\CSCI3097_HW3\CSCI3097_HW3\bin\Xbox 360\Debug\Content\starman_small.xnb</Output>
       <Time>2012-05-09T01:42:25.8593061-05:00</Time>
     </Item>
     <Item>
@@ -43,7 +43,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\kWhittin\Documents\Visual Studio 2010\Projects\CSCI3097_Final\CSCI3097_HW3\CSCI3097_HW3\bin\x86\Debug\Content\bunny_brown.xnb</Output>
+      <Output>C:\Users\kWhittin\Documents\Visual Studio 2010\Projects\CSCI3097_Final\CSCI3097_HW3\CSCI3097_HW3\bin\Xbox 360\Debug\Content\bunny_brown.xnb</Output>
       <Time>2012-05-09T01:42:25.8437061-05:00</Time>
     </Item>
     <Item>
@@ -52,19 +52,19 @@
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\kWhittin\Documents\Visual Studio 2010\Projects\CSCI3097_Final\CSCI3097_HW3\CSCI3097_HW3\bin\x86\Debug\Content\Courier New.xnb</Output>
+      <Output>C:\Users\kWhittin\Documents\Visual Studio 2010\Projects\CSCI3097_Final\CSCI3097_HW3\CSCI3097_HW3\bin\Xbox 360\Debug\Content\Courier New.xnb</Output>
       <Time>2012-05-09T01:42:25.8437061-05:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
-      <TargetPlatform>Windows</TargetPlatform>
-      <TargetProfile>Reach</TargetProfile>
+      <TargetPlatform>Xbox360</TargetPlatform>
+      <TargetProfile>HiDef</TargetProfile>
       <BuildConfiguration>Debug</BuildConfiguration>
-      <CompressContent>false</CompressContent>
+      <CompressContent>true</CompressContent>
       <RootDirectory>C:\Users\kWhittin\Documents\Visual Studio 2010\Projects\CSCI3097_Final\CSCI3097_HW3\CSCI3097_HW3Content\</RootDirectory>
       <LoggerRootDirectory>C:\Users\kWhittin\Documents\Visual Studio 2010\Projects\CSCI3097_Final\CSCI3097_HW3\CSCI3097_HW3\</LoggerRootDirectory>
-      <IntermediateDirectory>C:\Users\kWhittin\Documents\Visual Studio 2010\Projects\CSCI3097_Final\CSCI3097_HW3\CSCI3097_HW3Content\obj\x86\Debug\</IntermediateDirectory>
-      <OutputDirectory>C:\Users\kWhittin\Documents\Visual Studio 2010\Projects\CSCI3097_Final\CSCI3097_HW3\CSCI3097_HW3\bin\x86\Debug\Content\</OutputDirectory>
+      <IntermediateDirectory>C:\Users\kWhittin\Documents\Visual Studio 2010\Projects\CSCI3097_Final\CSCI3097_HW3\CSCI3097_HW3Content\obj\Xbox 360\Debug\</IntermediateDirectory>
+      <OutputDirectory>C:\Users\kWhittin\Documents\Visual Studio 2010\Projects\CSCI3097_Final\CSCI3097_HW3\CSCI3097_HW3\bin\Xbox 360\Debug\Content\</OutputDirectory>
     </Settings>
     <Assemblies>
       <Assembly>

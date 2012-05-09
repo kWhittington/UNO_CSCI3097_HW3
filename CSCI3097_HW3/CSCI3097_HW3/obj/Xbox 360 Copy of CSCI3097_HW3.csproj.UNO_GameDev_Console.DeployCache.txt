@@ -1,0 +1,27 @@
+4f00fb73251442808ca4e987720c8f38
+0
+UNO_GameDev_Console
+C:\Users\kWhittin\Documents\Visual Studio 2010\Projects\CSCI3097_Final\CSCI3097_HW3\CSCI3097_HW3\bin\Xbox 360\Debug\
+129810195500000000
+C:\Users\kWhittin\Documents\Visual Studio 2010\Projects\CSCI3097_Final\CSCI3097_HW3\CSCI3097_HW3\GameThumbnail.png
+2012-05-09T06:42:25.7345059Z
+C:\Users\kWhittin\Documents\Visual Studio 2010\Projects\CSCI3097_Final\CSCI3097_HW3\CSCI3097_HW3\bin\Xbox 360\Debug\CSCI3097_HW3.exe
+2012-05-09T06:44:53.6581843Z
+C:\Users\kWhittin\Documents\Visual Studio 2010\Projects\CSCI3097_Final\CSCI3097_HW3\CSCI3097_HW3\bin\Xbox 360\Debug\Content\bunny_brown.xnb
+2012-05-09T06:44:52.3967718Z
+C:\Users\kWhittin\Documents\Visual Studio 2010\Projects\CSCI3097_Final\CSCI3097_HW3\CSCI3097_HW3\bin\Xbox 360\Debug\Content\Courier New.xnb
+2012-05-09T06:44:52.9427728Z
+C:\Users\kWhittin\Documents\Visual Studio 2010\Projects\CSCI3097_Final\CSCI3097_HW3\CSCI3097_HW3\bin\Xbox 360\Debug\Content\goldteeth.xnb
+2012-05-09T06:44:52.0691712Z
+C:\Users\kWhittin\Documents\Visual Studio 2010\Projects\CSCI3097_Final\CSCI3097_HW3\CSCI3097_HW3\bin\Xbox 360\Debug\Content\level_one.txt
+2012-05-09T06:42:25.8437061Z
+C:\Users\kWhittin\Documents\Visual Studio 2010\Projects\CSCI3097_Final\CSCI3097_HW3\CSCI3097_HW3\bin\Xbox 360\Debug\Content\starman.png
+2012-05-09T06:42:25.8593061Z
+C:\Users\kWhittin\Documents\Visual Studio 2010\Projects\CSCI3097_Final\CSCI3097_HW3\CSCI3097_HW3\bin\Xbox 360\Debug\Content\starman.xnb
+2012-05-09T06:44:51.3671700Z
+C:\Users\kWhittin\Documents\Visual Studio 2010\Projects\CSCI3097_Final\CSCI3097_HW3\CSCI3097_HW3\bin\Xbox 360\Debug\Content\starman_small.xnb
+2012-05-09T06:44:52.2875716Z
+C:\Users\kWhittin\Documents\Visual Studio 2010\Projects\CSCI3097_Final\CSCI3097_HW3\CSCI3097_HW3\bin\Xbox 360\Debug\Content\tileset-platformer.png
+2012-05-09T06:42:25.8593061Z
+C:\Users\kWhittin\Documents\Visual Studio 2010\Projects\CSCI3097_Final\CSCI3097_HW3\CSCI3097_HW3\bin\Xbox 360\Debug\Content\tileset-platformer.xnb
+2012-05-09T06:44:51.9755711Z

@@ -99,6 +99,13 @@ namespace CSCI3097_HW3
       spriteBatch.Begin();
       String message = string.Format("Bunnies Left: {0}", this.bunnies_left);
       spriteBatch.DrawString(font, message, text_position, Color.White);
+      //if the game is over
+      if (this.bunnies_left == 0)
+      {
+        //draw the game over message
+        spriteBatch.DrawString(font, "Congratz!", new Vector2(385, 200), Color.White);
+        spriteBatch.DrawString(font, "You have all teh bunnies!", new Vector2(385, 264), Color.White);
+      }
       spriteBatch.End();
 
       base.Draw(gameTime);

@@ -13,3 +13,18 @@ C:\Users\kwhittin\Documents\Visual Studio 2010\Projects\CSCI3097_HW3\CSCI3097_HW
 C:\Users\kwhittin\Documents\Visual Studio 2010\Projects\CSCI3097_HW3\CSCI3097_HW3\CSCI3097_HW3\bin\x86\Debug\Content\starman_small.xnb
 C:\Users\kwhittin\Documents\Visual Studio 2010\Projects\CSCI3097_HW3\CSCI3097_HW3\CSCI3097_HW3\bin\x86\Debug\Content\bunny_brown.xnb
 C:\Users\kwhittin\Documents\Visual Studio 2010\Projects\CSCI3097_HW3\CSCI3097_HW3\CSCI3097_HW3\bin\x86\Debug\Content\Courier New.xnb
+C:\Users\kWhittin\Documents\Visual Studio 2010\Projects\CSCI3097_Final\CSCI3097_HW3\CSCI3097_HW3\bin\x86\Debug\Content\starman.xnb
+C:\Users\kWhittin\Documents\Visual Studio 2010\Projects\CSCI3097_Final\CSCI3097_HW3\CSCI3097_HW3\bin\x86\Debug\Content\tileset-platformer.xnb
+C:\Users\kWhittin\Documents\Visual Studio 2010\Projects\CSCI3097_Final\CSCI3097_HW3\CSCI3097_HW3\bin\x86\Debug\Content\goldteeth.xnb
+C:\Users\kWhittin\Documents\Visual Studio 2010\Projects\CSCI3097_Final\CSCI3097_HW3\CSCI3097_HW3\bin\x86\Debug\Content\starman_small.xnb
+C:\Users\kWhittin\Documents\Visual Studio 2010\Projects\CSCI3097_Final\CSCI3097_HW3\CSCI3097_HW3\bin\x86\Debug\Content\bunny_brown.xnb
+C:\Users\kWhittin\Documents\Visual Studio 2010\Projects\CSCI3097_Final\CSCI3097_HW3\CSCI3097_HW3\bin\x86\Debug\Content\Courier New.xnb
+C:\Users\kWhittin\Documents\Visual Studio 2010\Projects\CSCI3097_Final\CSCI3097_HW3\CSCI3097_HW3\bin\x86\Debug\Content\starman.png
+C:\Users\kWhittin\Documents\Visual Studio 2010\Projects\CSCI3097_Final\CSCI3097_HW3\CSCI3097_HW3\bin\x86\Debug\Content\tileset-platformer.png
+C:\Users\kWhittin\Documents\Visual Studio 2010\Projects\CSCI3097_Final\CSCI3097_HW3\CSCI3097_HW3\bin\x86\Debug\Content\level_one.txt
+C:\Users\kWhittin\Documents\Visual Studio 2010\Projects\CSCI3097_Final\CSCI3097_HW3\CSCI3097_HW3\bin\x86\Debug\CSCI3097_HW3.exe
+C:\Users\kWhittin\Documents\Visual Studio 2010\Projects\CSCI3097_Final\CSCI3097_HW3\CSCI3097_HW3\bin\x86\Debug\CSCI3097_HW3.pdb
+C:\Users\kWhittin\Documents\Visual Studio 2010\Projects\CSCI3097_Final\CSCI3097_HW3\CSCI3097_HW3\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\kWhittin\Documents\Visual Studio 2010\Projects\CSCI3097_Final\CSCI3097_HW3\CSCI3097_HW3\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\kWhittin\Documents\Visual Studio 2010\Projects\CSCI3097_Final\CSCI3097_HW3\CSCI3097_HW3\obj\x86\Debug\CSCI3097_HW3.exe
+C:\Users\kWhittin\Documents\Visual Studio 2010\Projects\CSCI3097_Final\CSCI3097_HW3\CSCI3097_HW3\obj\x86\Debug\CSCI3097_HW3.pdb
