@@ -34,7 +34,7 @@ namespace CSCI3097_HW3.Managers
     private const float enemy_run_speed = 3;
     private const float enemy_jump_speed = 5;
     private const float enemy_jump_height = 50;
-    private const float enemy_sight_range = 50;
+    private const float enemy_sight_range = 80;
     //here will be the rest of the enemy characters
     private LinkedList<Enemy> enemies;
     #endregion INSTANCE VARIABLES
