@@ -21,6 +21,9 @@ namespace CSCI3097_HW3
     GraphicsDeviceManager graphics;
     SpriteBatch spriteBatch;
     private Managers.LevelManager level_manager;
+    private int bunnies_left;
+    private SpriteFont font;
+    private Vector2 text_position;
 
     public Game()
     {
@@ -53,7 +56,8 @@ namespace CSCI3097_HW3
       spriteBatch = new SpriteBatch(GraphicsDevice);
       Services.AddService(typeof(SpriteBatch), spriteBatch);
       // TODO: use this.Content to load your game content here
-      
+      this.font = Content.Load<SpriteFont>("Courier New");
+      this.text_position = new Vector2(0, 0);
       base.LoadContent();
     }
 
@@ -78,6 +82,7 @@ namespace CSCI3097_HW3
         this.Exit();
 
       // TODO: Add your update logic here
+      this.bunnies_left = this.level_manager.currentLevel().bunniesLeft();
 
       base.Update(gameTime);
     }
@@ -91,6 +96,10 @@ namespace CSCI3097_HW3
       GraphicsDevice.Clear(Color.CornflowerBlue);
 
       // TODO: Add your drawing code here
+      spriteBatch.Begin();
+      String message = string.Format("Bunnies Left: {0}", this.bunnies_left);
+      spriteBatch.DrawString(font, message, text_position, Color.White);
+      spriteBatch.End();
 
       base.Draw(gameTime);
     }

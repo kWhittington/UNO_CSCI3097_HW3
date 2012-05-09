@@ -73,6 +73,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Character\AbstractCharacter.cs" />
+    <Compile Include="Character\AI\AbstractAI.cs" />
+    <Compile Include="Character\AI\Aggressive.cs" />
+    <Compile Include="Character\AI\AI.cs" />
+    <Compile Include="Character\AI\Neutral.cs" />
+    <Compile Include="Character\AI\Shy.cs" />
     <Compile Include="Character\Character.cs" />
     <Compile Include="Character\Enemy.cs" />
     <Compile Include="Character\Player.cs" />

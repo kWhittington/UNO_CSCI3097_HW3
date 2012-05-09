@@ -89,6 +89,18 @@ namespace CSCI3097_HW3.Character
     bool isJumping();
 
     /// <summary>
+    /// Will return whether or not this character is jumping right.
+    /// ENSURE:   return this.is_jumping_right
+    /// </summary>
+    bool isJumpingRight();
+
+    /// <summary>
+    /// Will return whether or not this character is jumping left.
+    /// ENSURE:   return this.is_jumping_left
+    /// </summary>
+    bool isJumpingLeft();
+
+    /// <summary>
     /// Will return whether or not the character is currently falling.
     /// ENSURE:   if the character is falling,
     ///            return true
@@ -166,6 +178,20 @@ namespace CSCI3097_HW3.Character
     ///            old.position.X-horiztonal velocity
     /// </summary>
     void setRightMove();
+
+    /// <summary>
+    /// Will set this enemy to jump right.
+    /// ENSURE:   this.is_jumping_right == true
+    ///           && this.is_jumping_left == false
+    /// </summary>
+    void setRightJump();
+
+    /// <summary>
+    /// Will set this enemy to jump left.
+    /// ENSURE:   this.is_jumping_left == true
+    ///           && this.is_jumping_right == false
+    /// </summary>
+    void setLeftJump();
 
     /// <summary>
     /// Will move this character's position based on the current

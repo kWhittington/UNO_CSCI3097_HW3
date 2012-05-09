@@ -20,7 +20,7 @@ namespace CSCI3097_HW3.Managers
   public class LevelManager : Microsoft.Xna.Framework.DrawableGameComponent
   {
     private List<CSCI3097_HW3.Level.Level> levels;
-    private Level.Level level;
+    private Level.Level current_level;
 
     public LevelManager(Game game, string player_texture_name, Vector2 player_start_position,
       String level_one_tile_sheet, String level_one_sheet)
@@ -35,7 +35,15 @@ namespace CSCI3097_HW3.Managers
       //add the first level to list
       levels.Add(new Level.Level(game, player_texture, player_start_position, level_one_tile_sheet, level_one_sheet_stream));
 
-      level = new Level.Level(game, player_texture, player_start_position, level_one_tile_sheet, level_one_sheet_stream);
+      current_level = new Level.Level(game, player_texture, player_start_position, level_one_tile_sheet, level_one_sheet_stream);
+    }
+
+    /// <summary>
+    /// Will return the current level.
+    /// </summary>
+    public Level.Level currentLevel()
+    {
+      return this.current_level;
     }
 
     /// <summary>
@@ -44,7 +52,7 @@ namespace CSCI3097_HW3.Managers
     /// </summary>
     public override void Initialize()
     {
-      Game.Components.Add(this.level); 
+      Game.Components.Add(this.current_level); 
       base.Initialize();
     }
 

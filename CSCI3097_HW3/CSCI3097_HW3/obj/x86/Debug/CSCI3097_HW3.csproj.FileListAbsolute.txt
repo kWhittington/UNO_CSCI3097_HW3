@@ -11,3 +11,5 @@ C:\Users\kwhittin\Documents\Visual Studio 2010\Projects\CSCI3097_HW3\CSCI3097_HW
 C:\Users\kwhittin\Documents\Visual Studio 2010\Projects\CSCI3097_HW3\CSCI3097_HW3\CSCI3097_HW3\bin\x86\Debug\Content\tileset-platformer.png
 C:\Users\kwhittin\Documents\Visual Studio 2010\Projects\CSCI3097_HW3\CSCI3097_HW3\CSCI3097_HW3\bin\x86\Debug\Content\goldteeth.xnb
 C:\Users\kwhittin\Documents\Visual Studio 2010\Projects\CSCI3097_HW3\CSCI3097_HW3\CSCI3097_HW3\bin\x86\Debug\Content\starman_small.xnb
+C:\Users\kwhittin\Documents\Visual Studio 2010\Projects\CSCI3097_HW3\CSCI3097_HW3\CSCI3097_HW3\bin\x86\Debug\Content\bunny_brown.xnb
+C:\Users\kwhittin\Documents\Visual Studio 2010\Projects\CSCI3097_HW3\CSCI3097_HW3\CSCI3097_HW3\bin\x86\Debug\Content\Courier New.xnb

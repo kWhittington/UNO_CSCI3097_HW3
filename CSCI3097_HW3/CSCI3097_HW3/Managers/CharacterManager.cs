@@ -30,10 +30,11 @@ namespace CSCI3097_HW3.Managers
     private const float player_run_speed = 8;
     private const float player_jump_speed = 10;
     private const float player_jump_height = 100;
-    private const float enemy_walk_speed = 4;
-    private const float enemy_run_speed = 8;
-    private const float enemy_jump_speed = 10;
+    private const float enemy_walk_speed = 1;
+    private const float enemy_run_speed = 3;
+    private const float enemy_jump_speed = 5;
     private const float enemy_jump_height = 50;
+    private const float enemy_sight_range = 50;
     //here will be the rest of the enemy characters
     private LinkedList<Enemy> enemies;
     #endregion INSTANCE VARIABLES
@@ -79,6 +80,44 @@ namespace CSCI3097_HW3.Managers
       return this.player_character.isAlive();
     }
 
+    /// <summary>
+    /// Will return a list of all characters being managed by this manager.
+    /// ENSURE:   a list of all characters in this manager is returned
+    /// </summary>
+    public List<Character.Character> characters()
+    {
+      List<Character.Character> result = new List<Character.Character>();
+      //add the player character to the list
+      result.Add(this.player_character);
+      //now add each enemy character
+      foreach (Enemy enemy in this.enemies)
+      {
+        result.Add(enemy);
+      }
+      return result;
+    }
+
+    /// <summary>
+    /// Will return a list of all alive characters
+    /// being managed by this manager.
+    /// ENSURE:   a list of all alive characters in this manager is returned
+    /// </summary>
+    public List<Character.Character> aliveCharacters()
+    {
+      List<Character.Character> result = new List<Character.Character>();
+      //for every character in this manager
+      foreach (Character.Character character in this.characters())
+      {
+        //if they are alive
+        if (character.isAlive() == true)
+        {
+          //add them to the result
+          result.Add(character);
+        }
+      }
+      return result;
+    }
+
     #endregion QUERIES
 
     #region COMMANDS
@@ -87,12 +126,18 @@ namespace CSCI3097_HW3.Managers
     /// REQUIRE:  given texture != null
     /// ENSURE:   this.enemies.contains(new enemy)
     /// </summary>
-    public void addEnemy(Texture2D texture, Vector2 start_position)
+    public void addEnemy(Texture2D texture, Vector2 start_position, Character.AI.AI personality,
+      int patrol_distance, int patrol_direction, bool is_patrolling)
     {
       //create the new enemy
       Enemy new_enemy = new Enemy(texture, start_position, enemy_walk_speed,
-        enemy_run_speed, enemy_jump_speed, enemy_jump_height);
+        enemy_run_speed, enemy_jump_speed, enemy_jump_height, enemy_sight_range,
+        personality);
       new_enemy.fall();
+      new_enemy.Personality().setPatrolDistance(patrol_distance);
+      new_enemy.Personality().setPatrolDirection(patrol_direction);
+      //if the unit is patrolling, tell it such
+      if (is_patrolling == true) { new_enemy.Personality().patrol(); }
 
       //now add it to the enemy list
       this.enemies.AddFirst(new_enemy);
@@ -119,44 +164,10 @@ namespace CSCI3097_HW3.Managers
       this.updatePlayer(keyboard);
       foreach (Enemy enemy in this.enemies)
       {
-        this.updateCharacter(enemy);
+        this.updateEnemy(enemy);
       }
-      //this.checkForFalling(this.player_character);
-
-      //this.player_character.moveCharacter();
 
       base.Update(gameTime);
-    }
-
-    /// <summary>
-    /// Will check if the given character will hit ground,
-    /// if so, their position will be set accordingly and grounded.
-    /// REQUIRE:  the given character != null
-    /// ENSURE:   if the character will hit ground,
-    ///            set their position and ground them.
-    /// </summary>
-    private void checkForGround(Character.Character character)
-    {
-
-    }
-
-    /// <summary>
-    /// Will check if the given character is grounded,
-    /// and make them fall if necessary.
-    /// REQUIRE:  The given character != null
-    /// ENSURE:   if the given character is not grounded,
-    ///            the character will be told to fall
-    ///           otherwise,
-    ///            they are left alone
-    /// </summary>
-    private void checkForFalling(Character.Character character)
-    {
-      //if the character is falling
-      if (character.isGrounded() == false)
-      {
-        //if not, tell the character to fall
-        character.fall();
-      }
     }
 
     /// <summary>
@@ -185,6 +196,56 @@ namespace CSCI3097_HW3.Managers
         //make them fall
         character.fall();
       }
+    }
+
+    /// <summary>
+    /// Will update the given enemy character.
+    /// </summary>
+    private void updateEnemy(Character.Enemy enemy)
+    {
+      //if the character is jumping right
+      if (enemy.isJumpingRight())
+      {
+        enemy.setRightMove();
+      }
+      //or if the character is jumping left
+      else if (enemy.isJumpingLeft())
+      {
+        enemy.setLeftMove();
+      }
+      //if the player is jumping
+      if (enemy.isJumping() == true)
+      {
+        //if the player has reached the max jumping height
+        if (enemy.jumpHeightReached())
+        {
+          //then begin their decent
+          enemy.fall();
+        }
+        //otherwise, the player is still jumping
+        else
+        {
+          enemy.jump();
+        }
+      }
+      //or if the player is falling
+      else if (enemy.isFalling() == true)
+      {
+        //make them fall
+        enemy.fall();
+      }
+
+      //for character alive right now
+      foreach (Character.Character character in this.aliveCharacters())
+      {
+        //if they are within view distance of this enemy
+        if (character.Equals(enemy) == false && enemy.canSee(character) == true)
+        {
+          //then update this enemy accordingly
+          enemy.react(character);
+        }
+      }
+      enemy.Personality().update();
     }
 
     /// <summary>

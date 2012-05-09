@@ -37,6 +37,24 @@
       <Output>C:\Users\kwhittin\Documents\Visual Studio 2010\Projects\CSCI3097_HW3\CSCI3097_HW3\CSCI3097_HW3\bin\x86\Debug\Content\starman_small.xnb</Output>
       <Time>2012-05-07T16:40:32.5758958-05:00</Time>
     </Item>
+    <Item>
+      <Source>bunny_brown.png</Source>
+      <Name>bunny_brown</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\kwhittin\Documents\Visual Studio 2010\Projects\CSCI3097_HW3\CSCI3097_HW3\CSCI3097_HW3\bin\x86\Debug\Content\bunny_brown.xnb</Output>
+      <Time>2012-05-08T22:34:11.219806-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Courier New.spritefont</Source>
+      <Name>Courier New</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\kwhittin\Documents\Visual Studio 2010\Projects\CSCI3097_HW3\CSCI3097_HW3\CSCI3097_HW3\bin\x86\Debug\Content\Courier New.xnb</Output>
+      <Time>2012-05-08T22:46:45.6462028-05:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <ContentProjectGUID>{413A79DF-40E3-4F45-904A-F8C5988FD59E}</ContentProjectGUID>

@@ -24,6 +24,8 @@ namespace CSCI3097_HW3.Character
     protected bool is_running;
     protected bool is_jumping;
     protected bool is_falling;
+    protected bool is_jumping_right;
+    protected bool is_jumping_left;
     protected Vector2 position;
     protected Vector2 jumping_point;
     protected float max_jump_height;
@@ -135,6 +137,24 @@ namespace CSCI3097_HW3.Character
     {
       //return is_jumping
       return this.is_jumping;
+    }
+
+    /// <summary>
+    /// Will return whether or not this character is jumping right.
+    /// ENSURE:   return this.is_jumping_right
+    /// </summary>
+    public bool isJumpingRight()
+    {
+      return this.is_jumping_right;
+    }
+
+    /// <summary>
+    /// Will return whether or not this character is jumping left.
+    /// ENSURE:   return this.is_jumping_left
+    /// </summary>
+    public bool isJumpingLeft()
+    {
+      return this.is_jumping_left;
     }
 
     /// <summary>
@@ -370,6 +390,30 @@ namespace CSCI3097_HW3.Character
     }
 
     /// <summary>
+    /// Will set this enemy to jump right.
+    /// ENSURE:   this.is_jumping_right == true
+    ///           && this.is_jumping_left == false
+    /// </summary>
+    public void setRightJump()
+    {
+      this.is_jumping_right = true;
+      this.is_jumping_left = false;
+      this.jump();
+    }
+
+    /// <summary>
+    /// Will set this enemy to jump left.
+    /// ENSURE:   this.is_jumping_left == true
+    ///           && this.is_jumping_right == false
+    /// </summary>
+    public void setLeftJump()
+    {
+      this.is_jumping_left = true;
+      this.is_jumping_right = false;
+      this.jump();
+    }
+
+    /// <summary>
     /// Will make this character fall, giving it a positive velocity.
     /// While falling, a character cannot jump if they have already.
     /// REQUIRE:  the character is allowed to pass through the space
@@ -380,6 +424,8 @@ namespace CSCI3097_HW3.Character
     public void fall()
     {
       //make sure the jump flag is off
+      this.is_jumping_right = false;
+      this.is_jumping_left = false;
       this.is_jumping = false;
       //turn the fall flag on
       this.is_falling = true;
@@ -398,6 +444,8 @@ namespace CSCI3097_HW3.Character
       this.is_falling = false;
       //turn the jump flag off
       this.is_jumping = false;
+      this.is_jumping_left = false;
+      this.is_jumping_right = false;
       //reset the vertical velocity, set it to 0,
       //neutralizing all vertical forces
       this.current_velocity.Y = 0;
