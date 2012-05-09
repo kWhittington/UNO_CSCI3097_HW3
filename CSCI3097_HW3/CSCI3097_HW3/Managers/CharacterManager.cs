@@ -161,7 +161,8 @@ namespace CSCI3097_HW3.Managers
     {
       // TODO: Add your update code here
       KeyboardState keyboard = Keyboard.GetState();
-      this.updatePlayer(keyboard);
+      GamePadState gamepad = GamePad.GetState(PlayerIndex.One);
+      this.updatePlayer(keyboard, gamepad);
       foreach (Enemy enemy in this.enemies)
       {
         this.updateEnemy(enemy);
@@ -251,16 +252,16 @@ namespace CSCI3097_HW3.Managers
     /// <summary>
     /// Will update the player based on input from the keyboard.
     /// </summary>
-    private void updatePlayer(KeyboardState keyboard)
+    private void updatePlayer(KeyboardState keyboard, GamePadState gamepad)
     {
       //if the left arrow key has been pressed
-      if (keyboard.IsKeyDown(Keys.Left))
+      if (keyboard.IsKeyDown(Keys.Left) || gamepad.IsButtonDown(Buttons.LeftThumbstickLeft))
       {
         //move the player left
         this.player_character.setLeftMove();
       }
       //if the right arrow key has been pressed
-      if (keyboard.IsKeyDown(Keys.Right))
+      if (keyboard.IsKeyDown(Keys.Right) || gamepad.IsButtonDown(Buttons.LeftThumbstickRight))
       {
         //move the player right
         this.player_character.setRightMove();
@@ -290,7 +291,7 @@ namespace CSCI3097_HW3.Managers
       else
       {
         //if the space bar has been pressed
-        if (keyboard.IsKeyDown(Keys.Space))
+        if (keyboard.IsKeyDown(Keys.Space) || gamepad.IsButtonDown(Buttons.A))
         {
           //make the player jump
           this.player_character.jump();
